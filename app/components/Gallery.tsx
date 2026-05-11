@@ -17,7 +17,7 @@ const GALLERY: { src: string; alt: string }[] = [
 export default function Gallery() {
   const { ref, isVisible } = useFadeIn<HTMLDivElement>();
   return (
-    <section className="bg-paper py-24 md:py-36">
+    <section className="bg-paper py-16 md:py-20">
       <div
         ref={ref}
         className={

@@ -6,7 +6,7 @@ import { useFadeIn } from "@/lib/useFadeIn";
 export default function ShortFilms() {
   const { ref, isVisible } = useFadeIn<HTMLDivElement>();
   return (
-    <section className="bg-paper py-24 md:py-36">
+    <section className="bg-paper py-16 md:py-20">
       <div
         ref={ref}
         className={
@@ -25,7 +25,7 @@ export default function ShortFilms() {
           PERFORMED.
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {shortFilmsProduced.map((f, i) => (
             <article
               key={f.title}
