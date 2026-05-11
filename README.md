@@ -1,10 +1,10 @@
 <div align="center">
 
-# SIFFAT, BY SIFFAT, FOR SIFFAT.
+# SIFFAAT, BY SIFFAAT, FOR SIFFAAT.
 
 ### A SPOTLIGHT · Nº 01 · MUMBAI · MMXXVI
 
-*A long-scroll editorial site for actor & model **Siffat Gandhi**.*
+*A long-scroll editorial site for actor & model **Siffaat Gandhi**.*
 *Built like a magazine. Lives on the web.*
 
 ![Hero](screenshots/readme/01-hero.png)
@@ -20,7 +20,7 @@
 
 ## INTRO.
 
-This is the source for [**siffatgandhi.com**](https://siffatgandhi.com) — a single-page, scroll-driven, magazine-style spotlight for **Siffat Gandhi**, a Mumbai-based actor, model, and producer of her own short films.
+This is the source for [**siffatgandhi.com**](https://siffatgandhi.com) — a single-page, scroll-driven, magazine-style spotlight for **Siffaat Gandhi**, a Mumbai-based actor, model, and producer of her own short films.
 
 The reference is i-D Magazine's *Spotlight* series: editorial typography, full-bleed photography, hand-drawn stickers, bold colour blocks, and the kind of pacing you only get from a print designer.
 
@@ -48,7 +48,7 @@ Hot-pink full-bleed block. *"Presence in every frame. Versatility in every look.
 
 ![Story](screenshots/readme/03-story.png)
 
-From Ludhiana to Bombay. Drop-cap *S* in oxblood. Single-column intro, then a 2-column body. Italics in EB Garamond. Signed off — Siffat.
+From Ludhiana to Bombay. Drop-cap *S* in oxblood. Single-column intro, then a 2-column body. Italics in EB Garamond. Signed off — Siffaat.
 
 ### Nº 04 — Photo Trio
 
@@ -197,7 +197,7 @@ siffat-spotlight/
 │       ├── LiteYouTube.tsx      # YouTube facade
 │       └── stickers/            # SVG sticker components
 ├── lib/
-│   ├── content.ts               # Typed Siffat bio + credits
+│   ├── content.ts               # Typed Siffaat bio + credits
 │   └── useFadeIn.ts             # IntersectionObserver hook
 ├── public/
 │   ├── photos/                  # Warm-graded portraits
@@ -262,6 +262,6 @@ The site is **fully static** — no Node, no PHP, no database. Once `out/` is on
 
 ### FIN.
 
-*A SIFFAT GANDHI SPOTLIGHT · MUMBAI · MMXXVI*
+*A SIFFAAT GANDHI SPOTLIGHT · MUMBAI · MMXXVI*
 
 </div>

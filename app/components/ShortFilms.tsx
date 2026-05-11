@@ -46,7 +46,7 @@ export default function ShortFilms() {
                 {f.title}
               </h3>
               <p className="mt-6 font-inter text-[10px] uppercase tracking-widest text-warmGrey">
-                Produced &amp; performed by Siffat Gandhi
+                Produced &amp; performed by Siffaat Gandhi
               </p>
             </article>
           ))}

@@ -25,20 +25,20 @@ const display = Archivo_Black({
 });
 
 export const metadata: Metadata = {
-  title: "Siffat Gandhi — Spotlight",
+  title: "Siffaat Gandhi — Spotlight",
   description:
-    "Spotlight — Siffat Gandhi. A long-form editorial portfolio: from Ludhiana to Bombay. Web shows, films, music videos, brand work, and self-tapes.",
-  metadataBase: new URL("https://siffatgandhi.com"),
+    "Spotlight — Siffaat Gandhi. A long-form editorial portfolio: from Ludhiana to Bombay. Web shows, films, music videos, brand work, and self-tapes.",
+  metadataBase: new URL("https://siffaatgandhi.com"),
   openGraph: {
-    title: "Siffat Gandhi — Spotlight",
+    title: "Siffaat Gandhi — Spotlight",
     description:
-      "Presence in every frame. Versatility in every look. A single-page editorial portfolio for actor Siffat Gandhi.",
+      "Presence in every frame. Versatility in every look. A single-page editorial portfolio for actor Siffaat Gandhi.",
     images: ["/photos/cover-suit.jpg"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Siffat Gandhi — Spotlight",
+    title: "Siffaat Gandhi — Spotlight",
     description: "Presence in every frame. Versatility in every look.",
     images: ["/photos/cover-suit.jpg"],
   },

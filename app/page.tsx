@@ -61,7 +61,7 @@ export default function Home() {
 
       <PinkBlockQuote
         density="tight"
-        attribution="— SIFFAT GANDHI, ON HER PRACTICE"
+        attribution="— SIFFAAT GANDHI, ON HER PRACTICE"
       >
         It&rsquo;s not performance —
         <br />
@@ -72,7 +72,7 @@ export default function Home() {
 
       <PhotoPyramid
         src="/photos/bindi.jpg"
-        alt="Siffat — bindi portrait, repeated"
+        alt="Siffaat — bindi portrait, repeated"
         caption="ONE FRAME. EIGHTY-FIVE TAKES."
       />
 
