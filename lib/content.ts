@@ -1,4 +1,4 @@
-// Canonical content for the Siffat Gandhi Spotlight site.
+// Canonical content for the Siffaat Gandhi Spotlight site.
 // Ported from /Users/piyushmishra/Desktop/siffat-portfolio/build/v3-content.json
 
 export type Bio = {
@@ -71,7 +71,7 @@ export type AuditionReel = {
 };
 
 export const bio: Bio = {
-  name: "Siffat Gandhi",
+  name: "Siffaat Gandhi",
   tagline: "Presence in every frame. Versatility in every look.",
   age: 25,
   height: "5'5\"",
@@ -105,12 +105,12 @@ export const storyCopy: StoryCopy = {
   dek: "Seven years in. A costume stylist who became an actor. A producer of her own stories.",
   dropCap: "S",
   bodyParagraphs: [
-    "Siffat Gandhi grew up in Ludhiana, Punjab, and finished school there before moving to Bombay in 2018 to study. The city met her halfway: first as a costume stylist, then in front of the camera. Television commercials came first — many of them, fast — and small parts in web shows and films followed.",
+    "Siffaat Gandhi grew up in Ludhiana, Punjab, and finished school there before moving to Bombay in 2018 to study. The city met her halfway: first as a costume stylist, then in front of the camera. Television commercials came first — many of them, fast — and small parts in web shows and films followed.",
     "She trained at THE ACTOR'S TRUTH under Saurabh Sachdeva, and continues theatre with him through ANTAR ANGAN — where the work is slower, harder, and more honest than any set she's been on.",
     "Recent on-screen credits include the web show VIMAL KHANNA (MX/Amazon) and the series KALAMANCH (KNVR Productions). Beyond performance, she has begun producing her own short films — Love Delivered and Best in the Game — choosing the stories she wants to live inside.",
     "MMA keeps her sharp. Yoga keeps her open. Both keep her ready.",
   ],
-  signature: "— Siffat",
+  signature: "— Siffaat",
 };
 
 export const webSeries: WebSeries[] = [
@@ -120,7 +120,7 @@ export const webSeries: WebSeries[] = [
     year: "Recent",
     isAnchor: true,
     url: null,
-    note: "Title voice-transcribed; verify spelling with Siffat",
+    note: "Title voice-transcribed; verify spelling with Siffaat",
   },
   {
     title: "KALAMANCH",
@@ -133,12 +133,12 @@ export const webSeries: WebSeries[] = [
 export const shortFilmsProduced: ShortFilm[] = [
   {
     title: "LOVE DELIVERED",
-    credit: "Produced & performed by Siffat Gandhi",
+    credit: "Produced & performed by Siffaat Gandhi",
     logline: null,
   },
   {
     title: "BEST IN THE GAME",
-    credit: "Produced & performed by Siffat Gandhi",
+    credit: "Produced & performed by Siffaat Gandhi",
     logline: null,
   },
 ];

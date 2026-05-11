@@ -1,13 +1,13 @@
 /**
  * Sticky two-square brand badge in the top-left corner.
  * Top: cyan square with serif italic "SG"
- * Bottom: hot-pink square with display caps "siffat"
+ * Bottom: hot-pink square with display caps "siffaat"
  * Mirrors i-D's stacked i- / -d logo block.
  */
 export default function SGBlock() {
   return (
     <div
-      aria-label="Siffat Gandhi — Spotlight"
+      aria-label="Siffaat Gandhi — Spotlight"
       className="fixed left-0 top-0 z-50 hidden md:flex md:flex-col"
       style={{ width: 150 }}
     >
@@ -30,7 +30,7 @@ export default function SGBlock() {
           className="font-display lowercase leading-none"
           style={{ fontSize: "42px", letterSpacing: "-0.04em" }}
         >
-          siffat
+          siffaat
         </span>
       </div>
     </div>

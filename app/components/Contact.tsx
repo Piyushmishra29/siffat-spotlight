@@ -26,7 +26,7 @@ export default function Contact() {
 
         <div className="mt-14 border-t hairline pt-12">
           <p className="text-center font-display uppercase text-3xl md:text-5xl tracking-tight2 text-ink">
-            SIFFAT GANDHI
+            SIFFAAT GANDHI
           </p>
 
           <table className="mx-auto mt-10 font-inter text-sm md:text-base">

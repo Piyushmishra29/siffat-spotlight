@@ -3,7 +3,7 @@ import Image from "next/image";
 /**
  * Hero — i-D style.
  * Full-bleed cover-suit portrait on right. Massive pink display caps overlay
- * "SIFFAT, BY SIFFAT, FOR SIFFAT." Credit stack sits in the negative space
+ * "SIFFAAT, BY SIFFAAT, FOR SIFFAAT." Credit stack sits in the negative space
  * next to the SGBlock badge.
  */
 export default function Hero() {
@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src="/photos/cover-suit.jpg"
-          alt="Siffat Gandhi — Spotlight cover"
+          alt="Siffaat Gandhi — Spotlight cover"
           fill
           priority
           sizes="100vw"
@@ -31,14 +31,14 @@ export default function Hero() {
         style={{ top: 18 }}
       >
         <p className="font-inter text-[10px] md:text-[11px] uppercase tracking-widest text-ink/85 leading-[1.55]">
-          WRITTEN BY SIFFAT GANDHI
+          WRITTEN BY SIFFAAT GANDHI
           <br />
           PHOTOGRAPHY VARIOUS
           <br />
           MUMBAI · MMXXVI
         </p>
         <p className="mt-5 font-inter text-[10px] md:text-[11px] uppercase tracking-widest text-ink/65">
-          SIFFATGANDHI.COM / SPOTLIGHT
+          SIFFAATGANDHI.COM / SPOTLIGHT
         </p>
       </div>
 
@@ -52,11 +52,11 @@ export default function Hero() {
           textAlign: "right",
         }}
       >
-        SIFFAT,
+        SIFFAAT,
         <br />
-        BY SIFFAT,
+        BY SIFFAAT,
         <br />
-        FOR SIFFAT.
+        FOR SIFFAAT.
       </h1>
 
       {/* Scroll cue */}
