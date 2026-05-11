@@ -8,7 +8,7 @@ export default function Story() {
   const [first, ...rest] = storyCopy.bodyParagraphs;
 
   return (
-    <section className="bg-paper py-24 md:py-36">
+    <section className="bg-paper py-16 md:py-24">
       <div
         ref={ref}
         className={

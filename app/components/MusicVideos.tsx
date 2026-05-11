@@ -12,7 +12,7 @@ const POSTERS: Record<string, string> = {
 export default function MusicVideos() {
   const { ref, isVisible } = useFadeIn<HTMLDivElement>();
   return (
-    <section className="bg-paper py-24 md:py-36">
+    <section className="bg-paper py-16 md:py-20">
       <div
         ref={ref}
         className={

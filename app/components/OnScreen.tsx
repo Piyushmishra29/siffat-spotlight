@@ -6,7 +6,7 @@ import { useFadeIn } from "@/lib/useFadeIn";
 export default function OnScreen() {
   const { ref, isVisible } = useFadeIn<HTMLDivElement>();
   return (
-    <section className="bg-paper py-24 md:py-36">
+    <section className="bg-paper py-16 md:py-20">
       <div
         ref={ref}
         className={
@@ -26,7 +26,7 @@ export default function OnScreen() {
           IN SERIES.
         </h2>
 
-        <div className="mt-14 grid grid-cols-1 gap-px bg-ink/15 md:grid-cols-2">
+        <div className="mt-10 grid grid-cols-1 gap-px bg-ink/15 md:grid-cols-2">
           {webSeries.map((w) => {
             const inner = (
               <div className="flex h-full flex-col justify-between bg-paper p-8 md:p-12 transition-colors hover:bg-pinkSoft/50">
