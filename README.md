@@ -157,13 +157,14 @@ No CMS. No analytics. No tracker. No JS framework for animations. The whole page
 ## PALETTE.
 
 ```
-#F4F1EC   Paper      cream ground, matches the PDF portfolio
+#FFFFFF   Paper      pure white ground
+#F4F1EC   Cream      reserved accent (LiteYouTube play frame)
 #0A0A0A   Ink        body type, base black
 #FF2D9B   Pink       the spotlight colour
 #FFD9EC   Pink Soft  hover wash on cards
 #5C5A45   Olive      full-bleed editorial blocks
-#8A857E   Warm Grey  captions, supporting type
-#9BE5DD   Cyan       SG block badge accent
+#666666   Warm Grey  captions, supporting type
+#9BE8E8   Cyan       SG block badge accent
 ```
 
 ---

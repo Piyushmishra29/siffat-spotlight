@@ -44,7 +44,7 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="mt-12 columns-1 gap-3 md:columns-2 md:gap-5 [column-fill:_balance]">
+        <div className="mt-12 columns-1 gap-3 md:columns-2 md:gap-5">
           {GALLERY.map((g) => (
             <figure key={g.src} className="mb-3 break-inside-avoid md:mb-5">
               <div className="relative w-full">
