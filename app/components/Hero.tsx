@@ -30,14 +30,14 @@ export default function Hero() {
         className="absolute left-4 right-4 z-10 md:left-[170px] md:right-auto md:top-6"
         style={{ top: 18 }}
       >
-        <p className="font-inter text-[10px] md:text-[11px] uppercase tracking-widest text-ink/85 leading-[1.55]">
+        <p className="font-inter text-[10px] md:text-[11px] uppercase tracking-widest text-paper/95 leading-[1.55] drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
           WRITTEN BY SIFFAAT GANDHI
           <br />
           PHOTOGRAPHY VARIOUS
           <br />
           MUMBAI · MMXXVI
         </p>
-        <p className="mt-5 font-inter text-[10px] md:text-[11px] uppercase tracking-widest text-ink/65">
+        <p className="mt-5 font-inter text-[10px] md:text-[11px] uppercase tracking-widest text-paper/75 drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
           SIFFAATGANDHI.COM / SPOTLIGHT
         </p>
       </div>
@@ -60,7 +60,7 @@ export default function Hero() {
       </h1>
 
       {/* Scroll cue */}
-      <div className="absolute inset-x-0 bottom-6 z-10 flex flex-col items-center text-ink/85">
+      <div className="absolute inset-x-0 bottom-6 z-10 flex flex-col items-center text-paper/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
         <span className="font-inter text-[10px] uppercase tracking-widest mb-2">
           Scroll
         </span>
