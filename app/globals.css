@@ -2,26 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #0a0a0a;
+  font-feature-settings: "kern", "onum";
 }
 
+/* utility classes */
 @layer utilities {
+  .scroll-fade {
+    @apply opacity-0 translate-y-2 transition-all duration-700 ease-out;
+  }
+  .scroll-fade.is-visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .hairline {
+    border-color: rgba(0, 0, 0, 0.18);
+  }
+
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-shadow-hero {
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Pink display caps over photo — light outline glow for legibility */
+  .text-stroke-hero {
+    -webkit-text-stroke: 0;
+    text-shadow:
+      0 0 1px rgba(255, 255, 255, 0.35),
+      0 2px 18px rgba(0, 0, 0, 0.15);
+  }
+
+  .drop-cap::first-letter {
+    font-family: var(--font-garamond), Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    float: left;
+    font-size: 4.8em;
+    line-height: 0.85;
+    padding: 0.05em 0.12em 0 0;
+    color: #ff2d9b;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-fade {
+    @apply opacity-100 translate-y-0;
+    transition: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+  }
+}
+
+/* On desktop, body sections should not sit under the sticky SGBlock badge
+   (which is 150px wide, top-left, z-50). Sections that don't intentionally
+   overlay full-bleed content gain a left gutter equal to the badge width. */
+@media (min-width: 768px) {
+  .sg-gutter {
+    padding-left: 180px !important;
+  }
+}
+
+/* Subtle scrim on hero text */
+.hero-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.08) 35%,
+    rgba(0, 0, 0, 0.18) 70%,
+    rgba(0, 0, 0, 0.28) 100%
+  );
+}
+
+/* Wiggle animation for stickers */
+@keyframes wiggle-rot {
+  0%,
+  100% {
+    transform: rotate(var(--rot, 0deg)) translateY(0);
+  }
+  50% {
+    transform: rotate(calc(var(--rot, 0deg) + 6deg)) translateY(-4px);
+  }
+}
+
+.sticker-wiggle {
+  animation: wiggle-rot 5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sticker-wiggle {
+    animation: none !important;
   }
 }
