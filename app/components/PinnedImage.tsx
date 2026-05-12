@@ -46,6 +46,7 @@ export default function PinnedImage({
             src={src}
             alt={alt}
             fill
+            priority
             sizes="100vw"
             className="object-cover"
             style={{ objectPosition: position }}
