@@ -13,7 +13,7 @@ export default function Contact() {
     willChange: "transform, opacity",
   } as const;
   return (
-    <section className="bg-olive text-paper py-16 md:py-24">
+    <section id="contact" className="bg-olive text-paper py-16 md:py-24">
       <div
         ref={ref}
         className="mx-auto max-w-4xl px-6 md:pl-[200px] md:pr-12"

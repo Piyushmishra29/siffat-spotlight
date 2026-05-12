@@ -8,7 +8,7 @@ import ChapterEyebrow from "./ChapterEyebrow";
 export default function OnScreen() {
   const { ref, progress } = useScrollProgress<HTMLDivElement>();
   return (
-    <section className="bg-paper py-16 md:py-20">
+    <section id="series" className="bg-paper py-16 md:py-20">
       <div
         ref={ref}
         className="mx-auto max-w-[1400px] px-6 md:pl-[180px] md:pr-12"
