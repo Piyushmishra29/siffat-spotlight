@@ -101,6 +101,20 @@ body {
   );
 }
 
+/* Hero title positioning — mobile sits the title low over the body
+   (so it doesn't crop the face); desktop keeps the masthead-style
+   upper-right placement. */
+.hero-title-pos {
+  top: auto;
+  bottom: 8%;
+}
+@media (min-width: 768px) {
+  .hero-title-pos {
+    top: clamp(110px, 16vh, 200px);
+    bottom: auto;
+  }
+}
+
 /* Right-side dim panel for the title block — bright dresses / props on the
    right side of the cover photo don't kill contrast. */
 .hero-title-side-scrim {
