@@ -2,6 +2,7 @@
 
 import { auditionReels } from "@/lib/content";
 import { useFadeIn } from "@/lib/useFadeIn";
+import ChapterEyebrow from "./ChapterEyebrow";
 
 export default function AuditionReels() {
   const { ref, isVisible } = useFadeIn<HTMLDivElement>();
@@ -14,9 +15,7 @@ export default function AuditionReels() {
           (isVisible ? "is-visible" : "")
         }
       >
-        <p className="mb-4 font-inter text-[10px] uppercase tracking-widest text-pink">
-          THE TAPE.
-        </p>
+        <ChapterEyebrow n="07" label="SELF-TAPES" className="mb-4" />
         <h2
           className="font-display uppercase leading-[0.9] tracking-tight2 text-ink"
           style={{ fontSize: "clamp(2.4rem, 7vw, 6rem)" }}

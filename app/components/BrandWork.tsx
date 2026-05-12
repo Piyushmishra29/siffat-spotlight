@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { brandWordmarkLines, brandStills } from "@/lib/content";
 import { useFadeIn } from "@/lib/useFadeIn";
+import ChapterEyebrow from "./ChapterEyebrow";
 
 export default function BrandWork() {
   const { ref, isVisible } = useFadeIn<HTMLDivElement>();
@@ -15,9 +16,7 @@ export default function BrandWork() {
           (isVisible ? "is-visible" : "")
         }
       >
-        <p className="mb-4 font-inter text-[10px] uppercase tracking-widest text-pink">
-          TVCs & CAMPAIGNS.
-        </p>
+        <ChapterEyebrow n="05" label="CAMPAIGNS" className="mb-4" />
         <h2
           className="font-display uppercase leading-[0.9] tracking-tight2 text-ink"
           style={{ fontSize: "clamp(2.4rem, 7vw, 6rem)" }}
