@@ -155,6 +155,27 @@ body {
   }
 }
 
+/* Marquee track — seamless loop. The component renders two identical
+   passes inline; the keyframe translates the track by -50% so the second
+   pass slides into place where the first started. */
+.marquee-track {
+  animation-name: marquee-loop;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+@keyframes marquee-loop {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
 /* Wiggle animation for stickers */
 @keyframes wiggle-rot {
   0%,
