@@ -87,15 +87,35 @@ body {
   );
 }
 
-/* Radial scrim behind the pink hero title — top-right corner darkens
-   without dimming the whole photo. */
-.hero-title-scrim {
-  background: radial-gradient(
-    ellipse 70% 70% at 100% 0%,
-    rgba(0, 0, 0, 0.42) 0%,
-    rgba(0, 0, 0, 0.22) 35%,
-    rgba(0, 0, 0, 0) 70%
+/* Linear scrim behind the hero title — guarantees pink-on-photo contrast
+   regardless of which portrait sits underneath. Covers most of the hero so
+   the lower title lines also have a darker bed. */
+.hero-top-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.42) 40%,
+    rgba(0, 0, 0, 0.22) 70%,
+    rgba(0, 0, 0, 0) 100%
   );
+}
+
+/* Right-side dim panel for the title block — bright dresses / props on the
+   right side of the cover photo don't kill contrast. */
+.hero-title-side-scrim {
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.2) 45%,
+    rgba(0, 0, 0, 0) 80%
+  );
+}
+
+/* Stronger drop-shadow specifically for the hero title. */
+.hero-title-shadow {
+  text-shadow:
+    0 2px 1px rgba(0, 0, 0, 0.55),
+    0 6px 28px rgba(0, 0, 0, 0.7);
 }
 
 /* Wiggle animation for stickers */

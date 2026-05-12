@@ -27,14 +27,14 @@ export default function Hero() {
         }}
       >
         <Image
-          src="/photos/pink-ck.jpg"
-          alt="Siffaat Gandhi — Spotlight cover"
+          src="/photos/red-door.jpg"
+          alt="Siffaat Gandhi — actor portfolio cover, red door portrait, Mumbai"
           fill
           priority
           quality={90}
           sizes="100vw"
           className="object-cover"
-          style={{ objectPosition: "center 20%" }}
+          style={{ objectPosition: "center 25%" }}
         />
       </div>
 
@@ -56,11 +56,15 @@ export default function Hero() {
 
       <div
         aria-hidden
-        className="pointer-events-none absolute right-0 top-0 z-[5] w-[70%] h-[55%] hero-title-scrim"
+        className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-[85%] hero-top-scrim"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-0 z-[5] h-full w-[60%] hero-title-side-scrim"
       />
 
       <h1
-        className="absolute right-0 z-10 font-display uppercase text-pink leading-[0.86] tracking-tight2 text-stroke-hero"
+        className="absolute right-0 z-10 font-display uppercase text-pink leading-[0.86] tracking-tight2 hero-title-shadow"
         style={{
           fontSize: "clamp(3.25rem, 11vw, 9.5rem)",
           top: "clamp(110px, 16vh, 200px)",
@@ -71,11 +75,11 @@ export default function Hero() {
           willChange: "transform, opacity",
         }}
       >
-        SIFFAAT,
+        SIFFAAT GANDHI.
         <br />
-        BY SIFFAAT,
+        ONE LOOK.
         <br />
-        FOR SIFFAAT.
+        EVERY ROLE.
       </h1>
 
       <div
