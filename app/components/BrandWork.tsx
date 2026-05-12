@@ -39,12 +39,20 @@ export default function BrandWork() {
                   willChange: "transform, opacity",
                 }}
               >
-                {line.map((name, j) => (
+                {line.map((b, j) => (
                   <span
-                    key={name}
+                    key={b.name}
                     className="font-display uppercase text-lg md:text-2xl tracking-tight2 text-ink"
                   >
-                    {name}
+                    <a
+                      href={b.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-cursor-label="Watch"
+                      className="border-b border-transparent hover:border-pink hover:text-pink transition-colors duration-200"
+                    >
+                      {b.name}
+                    </a>
                     {j < line.length - 1 && (
                       <span className="ml-4 md:ml-8 text-pink">·</span>
                     )}

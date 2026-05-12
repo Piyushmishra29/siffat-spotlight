@@ -25,12 +25,10 @@ export default function ShortFilms() {
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           {shortFilmsProduced.map((f, i) => {
             const motion = staggerRise(progress, 0.1 + i * 0.1);
-            return (
-              <article
-                key={f.title}
-                className="group/card relative overflow-hidden border hairline bg-paper p-8 md:p-12 min-h-[260px] flex flex-col justify-between"
-                style={{ ...motion, willChange: "transform, opacity" }}
-              >
+            const cardClass =
+              "group/card relative overflow-hidden border hairline bg-paper p-8 md:p-12 min-h-[260px] flex flex-col justify-between";
+            const inner = (
+              <>
                 <span
                   aria-hidden
                   className="pointer-events-none absolute inset-y-0 left-0 w-px bg-pink scale-y-0 origin-top transition-transform duration-300 group-hover/card:scale-y-100"
@@ -52,6 +50,27 @@ export default function ShortFilms() {
                 <p className="mt-6 font-inter text-[10px] uppercase tracking-widest text-warmGrey">
                   Produced &amp; performed by Siffaat Gandhi
                 </p>
+              </>
+            );
+            return f.url ? (
+              <a
+                key={f.title}
+                href={f.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor-label="Watch"
+                className={cardClass}
+                style={{ ...motion, willChange: "transform, opacity" }}
+              >
+                {inner}
+              </a>
+            ) : (
+              <article
+                key={f.title}
+                className={cardClass}
+                style={{ ...motion, willChange: "transform, opacity" }}
+              >
+                {inner}
               </article>
             );
           })}
