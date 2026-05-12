@@ -9,14 +9,16 @@ export default function LenisProvider() {
     const reduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
-    if (reduced) return;
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    // Skip Lenis on touch devices — native scroll is already smooth, and
+    // Lenis touch interception can swallow link taps on some mobile browsers.
+    if (reduced || coarse) return;
 
     const lenis = new Lenis({
       duration: 1.45,
       easing: (t: number) => 1 - Math.pow(1 - t, 4),
       smoothWheel: true,
       wheelMultiplier: 0.95,
-      touchMultiplier: 1.5,
     });
 
     let raf = 0;
