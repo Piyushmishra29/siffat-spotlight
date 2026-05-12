@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, EB_Garamond, Archivo_Black } from "next/font/google";
 import "./globals.css";
+import LenisProvider from "./components/LenisProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -52,7 +53,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${garamond.variable} ${display.variable}`}
     >
-      <body className="bg-paper text-ink font-garamond">{children}</body>
+      <body className="bg-paper text-ink font-garamond">
+        <LenisProvider />
+        {children}
+      </body>
     </html>
   );
 }

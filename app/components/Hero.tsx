@@ -1,19 +1,31 @@
-import Image from "next/image";
+"use client";
 
-/**
- * Hero — i-D style.
- * Full-bleed cover-suit portrait on right. Massive pink display caps overlay
- * "SIFFAAT, BY SIFFAAT, FOR SIFFAAT." Credit stack sits in the negative space
- * next to the SGBlock badge.
- */
+import Image from "next/image";
+import { useScrollProgress } from "@/lib/useScrollProgress";
+
 export default function Hero() {
+  const { ref, progress } = useScrollProgress<HTMLElement>();
+
+  // Parallax: image drifts up slower than scroll; title floats up a touch
+  const imgY = -progress * 18; // %
+  const imgScale = 1 + progress * 0.08;
+  const titleY = -progress * 60; // px
+  const titleOpacity = Math.max(0, 1 - progress * 1.6);
+  const cueOpacity = Math.max(0, 1 - progress * 4);
+
   return (
     <section
+      ref={ref}
       id="hero"
       className="relative min-h-[100svh] w-full overflow-hidden bg-paper text-ink"
     >
-      {/* Photo */}
-      <div className="absolute inset-0">
+      <div
+        className="absolute inset-0"
+        style={{
+          transform: `translate3d(0, ${imgY}%, 0) scale(${imgScale})`,
+          willChange: "transform",
+        }}
+      >
         <Image
           src="/photos/cover-suit.jpg"
           alt="Siffaat Gandhi — Spotlight cover"
@@ -25,7 +37,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* Credit stack — sits to the right of the SGBlock badge */}
       <div
         className="absolute left-4 right-4 z-10 md:left-[170px] md:right-auto md:top-6"
         style={{ top: 18 }}
@@ -42,7 +53,6 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Massive pink display caps — hangs off the right edge */}
       <h1
         className="absolute right-0 z-10 font-display uppercase text-pink leading-[0.86] tracking-tight2 text-stroke-hero"
         style={{
@@ -50,6 +60,9 @@ export default function Hero() {
           top: "clamp(100px, 16vh, 200px)",
           paddingRight: "clamp(0.75rem, 2vw, 2rem)",
           textAlign: "right",
+          transform: `translate3d(0, ${titleY}px, 0)`,
+          opacity: titleOpacity,
+          willChange: "transform, opacity",
         }}
       >
         SIFFAAT,
@@ -59,8 +72,10 @@ export default function Hero() {
         FOR SIFFAAT.
       </h1>
 
-      {/* Scroll cue */}
-      <div className="absolute inset-x-0 bottom-6 z-10 flex flex-col items-center text-paper/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
+      <div
+        className="absolute inset-x-0 bottom-6 z-10 flex flex-col items-center text-paper/90 drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]"
+        style={{ opacity: cueOpacity }}
+      >
         <span className="font-inter text-[10px] uppercase tracking-widest mb-2">
           Scroll
         </span>
