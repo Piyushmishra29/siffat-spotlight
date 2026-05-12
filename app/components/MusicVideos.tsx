@@ -14,7 +14,7 @@ const POSTERS: Record<string, string> = {
 export default function MusicVideos() {
   const { ref, progress } = useScrollProgress<HTMLDivElement>();
   return (
-    <section className="bg-paper py-16 md:py-20">
+    <section id="motion" className="bg-paper py-16 md:py-20">
       <div
         ref={ref}
         className="mx-auto max-w-[1400px] px-6 md:pl-[180px] md:pr-12"

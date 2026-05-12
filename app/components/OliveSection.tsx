@@ -5,10 +5,11 @@ import { easeOutCubic, tileLocal } from "@/lib/motion";
 
 type Props = {
   eyebrow?: string;
+  id?: string;
   children: React.ReactNode;
 };
 
-export default function OliveSection({ eyebrow, children }: Props) {
+export default function OliveSection({ eyebrow, id, children }: Props) {
   const { ref, progress } = useScrollProgress<HTMLDivElement>();
   const e = easeOutCubic(tileLocal(progress, 0.05, 0.6));
   const motion = {
@@ -18,7 +19,7 @@ export default function OliveSection({ eyebrow, children }: Props) {
   } as const;
 
   return (
-    <section className="bg-olive text-paper py-24 md:py-36">
+    <section id={id} className="bg-olive text-paper py-24 md:py-36">
       <div
         ref={ref}
         className="mx-auto max-w-[1100px] px-6 md:pl-[180px] md:pr-12"

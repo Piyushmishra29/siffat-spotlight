@@ -14,6 +14,7 @@ type Props = {
   /** Section min height. Bigger = more sticky dwell. Default 220vh. */
   heightVh?: number;
   className?: string;
+  id?: string;
   children: ReactNode;
 };
 
@@ -30,6 +31,7 @@ export default function ScrollPinned({
   side = "right",
   heightVh = 220,
   className = "",
+  id,
   children,
 }: Props) {
   const { ref, progress } = useScrollProgress<HTMLElement>();
@@ -74,6 +76,7 @@ export default function ScrollPinned({
   return (
     <section
       ref={ref}
+      id={id}
       className={"relative " + className}
       style={{ minHeight: `${heightVh}vh` }}
     >

@@ -9,8 +9,9 @@ export default function Story() {
 
   return (
     <ScrollPinned
+      id="story"
       image="/photos/red-door.jpg"
-      alt="Siffaat — red door portrait"
+      alt="Siffaat Gandhi — red door portrait, lehenga and leather, Mumbai"
       caption="RED DOOR · MUMBAI"
       side="right"
       heightVh={240}
