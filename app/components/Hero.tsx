@@ -75,11 +75,31 @@ export default function Hero() {
           willChange: "transform, opacity",
         }}
       >
-        SIFFAAT GANDHI.
-        <br />
-        ONE LOOK.
-        <br />
-        EVERY ROLE.
+        {[
+          ["SIFFAAT", "GANDHI."],
+          ["ONE", "LOOK."],
+          ["EVERY", "ROLE."],
+        ].map((line, li) => (
+          <span key={li} className="block">
+            {line.map((word, wi) => {
+              const idx = li * 2 + wi;
+              return (
+                <span
+                  key={wi}
+                  className="inline-block overflow-hidden align-bottom"
+                >
+                  <span
+                    className="hero-word"
+                    style={{ animationDelay: `${0.18 + idx * 0.08}s` }}
+                  >
+                    {word}
+                  </span>
+                  {wi === 0 ? <span className="inline-block w-[0.25em]">{" "}</span> : null}
+                </span>
+              );
+            })}
+          </span>
+        ))}
       </h1>
 
       <div

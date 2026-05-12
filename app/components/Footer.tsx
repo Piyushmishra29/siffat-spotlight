@@ -11,12 +11,16 @@ export default function Footer() {
         </p>
         <p className="mt-3 text-center font-inter text-[10px] uppercase tracking-widest text-warmGrey/70">
           built with{" "}
-          <span aria-label="love" className="text-pink">
+          <span aria-label="love" className="text-pink text-[12px] align-middle">
             ♥
           </span>{" "}
           by{" "}
-          <span className="font-garamond italic text-ink" title="π — Piyush">
-            π
+          <span
+            className="font-garamond text-ink text-[14px] align-middle tracking-normal"
+            title="Piyush"
+            style={{ fontStyle: "italic", fontFeatureSettings: '"liga", "kern"' }}
+          >
+            𝜋
           </span>
         </p>
       </div>

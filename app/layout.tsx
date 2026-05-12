@@ -6,6 +6,7 @@ import ScrollProgressBar from "./components/ScrollProgressBar";
 import AnchorNav from "./components/AnchorNav";
 import GrainOverlay from "./components/GrainOverlay";
 import Cursor from "./components/Cursor";
+import SplashScreen from "./components/SplashScreen";
 import { bio, contact } from "@/lib/content";
 
 const inter = Inter({
@@ -143,6 +144,7 @@ export default function RootLayout({
         {children}
         <GrainOverlay />
         <Cursor />
+        <SplashScreen />
       </body>
     </html>
   );
