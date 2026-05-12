@@ -12,10 +12,10 @@ export default function LenisProvider() {
     if (reduced) return;
 
     const lenis = new Lenis({
-      duration: 1.15,
-      easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      duration: 1.45,
+      easing: (t: number) => 1 - Math.pow(1 - t, 4),
       smoothWheel: true,
-      wheelMultiplier: 1,
+      wheelMultiplier: 0.95,
       touchMultiplier: 1.5,
     });
 

@@ -4,6 +4,7 @@ import "./globals.css";
 import LenisProvider from "./components/LenisProvider";
 import ScrollProgressBar from "./components/ScrollProgressBar";
 import AnchorNav from "./components/AnchorNav";
+import GrainOverlay from "./components/GrainOverlay";
 import { bio, contact } from "@/lib/content";
 
 const inter = Inter({
@@ -139,6 +140,7 @@ export default function RootLayout({
         <ScrollProgressBar />
         <AnchorNav />
         {children}
+        <GrainOverlay />
       </body>
     </html>
   );

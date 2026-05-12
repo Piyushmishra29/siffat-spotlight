@@ -36,7 +36,7 @@ export default function PinnedImage({
     >
       <div className="sticky top-0 h-screen overflow-hidden">
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 editorial-treatment"
           style={{
             transform: `translate3d(0, ${innerY}px, 0) scale(${scale})`,
             willChange: "transform",

@@ -9,6 +9,16 @@ export default function Footer() {
           <span className="mx-2 text-pink">·</span>
           MMXXVI
         </p>
+        <p className="mt-3 text-center font-inter text-[10px] uppercase tracking-widest text-warmGrey/70">
+          built with{" "}
+          <span aria-label="love" className="text-pink">
+            ♥
+          </span>{" "}
+          by{" "}
+          <span className="font-garamond italic text-ink" title="π — Piyush">
+            π
+          </span>
+        </p>
       </div>
     </footer>
   );
