@@ -106,7 +106,6 @@ export const storyCopy: StoryCopy = {
   dropCap: "S",
   bodyParagraphs: [
     "Siffaat Gandhi, an actor based in Mumbai, originally from Ludhiana, Punjab.",
-    "Trained at The Actor's Truth under Saurabh Sachdeva, where I truly began understanding the craft beyond just the camera.",
   ],
   signature: "",
 };
