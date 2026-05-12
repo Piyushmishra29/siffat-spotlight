@@ -21,6 +21,7 @@ export function useScrollProgress<T extends HTMLElement = HTMLElement>() {
       return;
     }
     let raf = 0;
+    let last = -1;
     const update = () => {
       raf = 0;
       const el = ref.current;
@@ -30,7 +31,10 @@ export function useScrollProgress<T extends HTMLElement = HTMLElement>() {
       const total = rect.height + vh;
       const passed = vh - rect.top;
       const p = Math.max(0, Math.min(1, passed / total));
-      setProgress(p);
+      const q = Math.round(p * 500) / 500;
+      if (q === last) return;
+      last = q;
+      setProgress(q);
     };
     const onScroll = () => {
       if (raf) return;
