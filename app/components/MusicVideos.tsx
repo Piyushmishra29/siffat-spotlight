@@ -36,7 +36,7 @@ export default function MusicVideos() {
               POSTERS[mv.title] ??
               (id
                 ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
-                : "/photos/pink-ck.jpg");
+                : "/photos/sized/pink-ck-1280.jpg");
             const motion = staggerRise(progress, 0.05 + i * 0.12);
             return (
               <figure
