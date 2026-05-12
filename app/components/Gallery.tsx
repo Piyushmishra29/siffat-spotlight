@@ -18,7 +18,7 @@ const GALLERY: { src: string; alt: string }[] = [
 export default function Gallery() {
   const { ref, isVisible } = useFadeIn<HTMLDivElement>();
   return (
-    <section className="bg-paper py-16 md:py-20">
+    <section className="bg-pink py-16 md:py-20">
       <div
         ref={ref}
         className={
@@ -28,7 +28,7 @@ export default function Gallery() {
       >
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <ChapterEyebrow n="08" label="RANGE" className="mb-4" />
+            <ChapterEyebrow n="08" label="RANGE" tone="ink" className="mb-4" />
             <h2
               className="font-display uppercase leading-[0.9] tracking-tight2 text-ink"
               style={{ fontSize: "clamp(3rem, 9vw, 8rem)" }}
@@ -36,7 +36,7 @@ export default function Gallery() {
               RANGE.
             </h2>
           </div>
-          <p className="max-w-sm font-garamond italic text-warmGrey text-base md:text-right md:text-lg">
+          <p className="max-w-sm font-garamond italic text-ink/75 text-base md:text-right md:text-lg">
             Six years of frames. Six different rooms.
             <br />
             One presence.

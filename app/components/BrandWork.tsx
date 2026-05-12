@@ -8,7 +8,7 @@ import ChapterEyebrow from "./ChapterEyebrow";
 export default function BrandWork() {
   const { ref, isVisible } = useFadeIn<HTMLDivElement>();
   return (
-    <section className="bg-paper py-16 md:py-20">
+    <section className="bg-cream py-16 md:py-20">
       <div
         ref={ref}
         className={
