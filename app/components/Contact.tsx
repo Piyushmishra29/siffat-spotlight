@@ -6,7 +6,7 @@ import { useFadeIn } from "@/lib/useFadeIn";
 export default function Contact() {
   const { ref, isVisible } = useFadeIn<HTMLDivElement>();
   return (
-    <section className="bg-paper py-16 md:py-24">
+    <section className="bg-olive text-paper py-16 md:py-24">
       <div
         ref={ref}
         className={
@@ -24,28 +24,28 @@ export default function Contact() {
           LET&rsquo;S WORK.
         </h2>
 
-        <div className="mt-14 border-t hairline pt-12">
-          <p className="text-center font-display uppercase text-3xl md:text-5xl tracking-tight2 text-ink">
+        <div className="mt-14 border-t border-paper/25 pt-12">
+          <p className="text-center font-display uppercase text-3xl md:text-5xl tracking-tight2 text-paper">
             SIFFAAT GANDHI
           </p>
 
           <table className="mx-auto mt-10 font-inter text-sm md:text-base">
             <tbody>
               <tr>
-                <td className="pr-8 py-2 text-right font-inter text-[10px] uppercase tracking-widest text-warmGrey align-top">
+                <td className="pr-8 py-2 text-right font-inter text-[10px] uppercase tracking-widest text-paper/65 align-top">
                   Phone
                 </td>
                 <td className="py-2">
                   <a
                     href={`tel:${contact.phone.replace(/\s+/g, "")}`}
-                    className="tracking-wider text-ink hover:text-pink transition-colors"
+                    className="tracking-wider text-paper hover:text-pink transition-colors"
                   >
                     {contact.phone}
                   </a>
                 </td>
               </tr>
               <tr>
-                <td className="pr-8 py-2 text-right font-inter text-[10px] uppercase tracking-widest text-warmGrey align-top">
+                <td className="pr-8 py-2 text-right font-inter text-[10px] uppercase tracking-widest text-paper/65 align-top">
                   Email
                 </td>
                 <td className="py-2">
@@ -58,7 +58,7 @@ export default function Contact() {
                 </td>
               </tr>
               <tr>
-                <td className="pr-8 py-2 text-right font-inter text-[10px] uppercase tracking-widest text-warmGrey align-top">
+                <td className="pr-8 py-2 text-right font-inter text-[10px] uppercase tracking-widest text-paper/65 align-top">
                   Instagram
                 </td>
                 <td className="py-2">
@@ -73,23 +73,23 @@ export default function Contact() {
                 </td>
               </tr>
               <tr>
-                <td className="pr-8 py-2 text-right font-inter text-[10px] uppercase tracking-widest text-warmGrey align-top">
+                <td className="pr-8 py-2 text-right font-inter text-[10px] uppercase tracking-widest text-paper/65 align-top">
                   Based
                 </td>
-                <td className="py-2 tracking-wider text-ink">{bio.basedIn}</td>
+                <td className="py-2 tracking-wider text-paper">{bio.basedIn}</td>
               </tr>
               <tr>
-                <td className="pr-8 py-2 text-right font-inter text-[10px] uppercase tracking-widest text-warmGrey align-top">
+                <td className="pr-8 py-2 text-right font-inter text-[10px] uppercase tracking-widest text-paper/65 align-top">
                   Languages
                 </td>
-                <td className="py-2 tracking-wider text-ink">
+                <td className="py-2 tracking-wider text-paper">
                   {bio.languages.join(" · ")}
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <p className="mt-12 text-center font-inter text-[10px] uppercase tracking-widest text-warmGrey">
+          <p className="mt-12 text-center font-inter text-[10px] uppercase tracking-widest text-paper/65">
             Based in Mumbai · Available Worldwide
           </p>
         </div>
