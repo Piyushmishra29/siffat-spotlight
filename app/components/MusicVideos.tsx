@@ -1,7 +1,8 @@
 "use client";
 
 import { musicVideos, youtubeId } from "@/lib/content";
-import { useFadeIn } from "@/lib/useFadeIn";
+import { useScrollProgress } from "@/lib/useScrollProgress";
+import { staggerRise } from "@/lib/motion";
 import LiteYouTube from "./LiteYouTube";
 import ChapterEyebrow from "./ChapterEyebrow";
 
@@ -11,15 +12,12 @@ const POSTERS: Record<string, string> = {
 };
 
 export default function MusicVideos() {
-  const { ref, isVisible } = useFadeIn<HTMLDivElement>();
+  const { ref, progress } = useScrollProgress<HTMLDivElement>();
   return (
     <section className="bg-paper py-16 md:py-20">
       <div
         ref={ref}
-        className={
-          "mx-auto max-w-[1400px] px-6 md:pl-[180px] md:pr-12 scroll-fade " +
-          (isVisible ? "is-visible" : "")
-        }
+        className="mx-auto max-w-[1400px] px-6 md:pl-[180px] md:pr-12"
       >
         <ChapterEyebrow n="03" label="MOTION" className="mb-4" />
         <h2
@@ -32,15 +30,20 @@ export default function MusicVideos() {
         </h2>
 
         <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
-          {musicVideos.map((mv) => {
+          {musicVideos.map((mv, i) => {
             const id = youtubeId(mv.url) ?? "";
             const poster =
               POSTERS[mv.title] ??
               (id
                 ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
                 : "/photos/pink-ck.jpg");
+            const motion = staggerRise(progress, 0.05 + i * 0.12);
             return (
-              <figure key={mv.title} className="flex flex-col">
+              <figure
+                key={mv.title}
+                className="flex flex-col"
+                style={{ ...motion, willChange: "transform, opacity" }}
+              >
                 <LiteYouTube ytId={id} title={mv.title} poster={poster} />
                 <figcaption className="mt-4 flex items-baseline justify-between border-t hairline pt-4">
                   <div>

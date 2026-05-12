@@ -1,19 +1,17 @@
 "use client";
 
 import { webSeries } from "@/lib/content";
-import { useFadeIn } from "@/lib/useFadeIn";
+import { useScrollProgress } from "@/lib/useScrollProgress";
+import { staggerRise } from "@/lib/motion";
 import ChapterEyebrow from "./ChapterEyebrow";
 
 export default function OnScreen() {
-  const { ref, isVisible } = useFadeIn<HTMLDivElement>();
+  const { ref, progress } = useScrollProgress<HTMLDivElement>();
   return (
     <section className="bg-paper py-16 md:py-20">
       <div
         ref={ref}
-        className={
-          "mx-auto max-w-[1400px] px-6 md:pl-[180px] md:pr-12 scroll-fade " +
-          (isVisible ? "is-visible" : "")
-        }
+        className="mx-auto max-w-[1400px] px-6 md:pl-[180px] md:pr-12"
       >
         <ChapterEyebrow n="02" label="SERIES" className="mb-4" />
         <h2
@@ -26,16 +24,24 @@ export default function OnScreen() {
         </h2>
 
         <div className="mt-10 grid grid-cols-1 gap-px bg-ink/15 md:grid-cols-2">
-          {webSeries.map((w) => {
+          {webSeries.map((w, i) => {
+            const motion = staggerRise(progress, 0.05 + i * 0.08);
             const inner = (
-              <div className="flex h-full flex-col justify-between bg-paper p-8 md:p-12 transition-colors hover:bg-pinkSoft/50">
+              <div
+                className="group/card relative flex h-full flex-col justify-between bg-paper p-8 md:p-12 overflow-hidden"
+                style={{ ...motion, willChange: "transform, opacity" }}
+              >
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-y-0 left-0 w-px bg-pink scale-y-0 origin-top transition-transform duration-300 group-hover/card:scale-y-100"
+                />
                 <div>
                   <p className="font-inter text-[10px] uppercase tracking-widest text-warmGrey">
                     {w.production}
                     {w.platform ? ` · ${w.platform}` : ""}
                   </p>
                   <h3
-                    className="mt-6 font-display uppercase leading-[0.9] tracking-tight2 text-ink"
+                    className="mt-6 font-display uppercase leading-[0.9] tracking-tight2 text-ink transition-transform duration-300 group-hover/card:-translate-y-0.5"
                     style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}
                   >
                     {w.title}

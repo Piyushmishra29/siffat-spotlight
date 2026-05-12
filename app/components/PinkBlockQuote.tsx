@@ -1,24 +1,27 @@
 "use client";
 
-import { useFadeIn } from "@/lib/useFadeIn";
+import { useScrollProgress } from "@/lib/useScrollProgress";
+import { easeOutCubic, tileLocal } from "@/lib/motion";
 
 type Props = {
   children: React.ReactNode;
   attribution?: string;
-  /** Vertical padding density — "tight" for in-between, "loose" for hero quote */
   density?: "tight" | "loose";
 };
 
-/**
- * Full-bleed hot-pink quote block. Body in EB Garamond italic over pink.
- * Tracked-caps attribution underneath in Inter.
- */
 export default function PinkBlockQuote({
   children,
   attribution,
   density = "loose",
 }: Props) {
-  const { ref, isVisible } = useFadeIn<HTMLDivElement>();
+  const { ref, progress } = useScrollProgress<HTMLDivElement>();
+  const e = easeOutCubic(tileLocal(progress, 0.05, 0.6));
+  const motion = {
+    transform: `translate3d(0, ${(1 - e) * 24}px, 0) scale(${0.97 + e * 0.03})`,
+    opacity: 0.0 + e,
+    willChange: "transform, opacity",
+  } as const;
+
   return (
     <section
       className={
@@ -28,10 +31,8 @@ export default function PinkBlockQuote({
     >
       <div
         ref={ref}
-        className={
-          "mx-auto max-w-[1500px] px-6 md:pl-[180px] md:pr-16 scroll-fade " +
-          (isVisible ? "is-visible" : "")
-        }
+        className="mx-auto max-w-[1500px] px-6 md:pl-[180px] md:pr-16"
+        style={motion}
       >
         <blockquote
           className="font-garamond italic leading-[1.05] text-ink"
