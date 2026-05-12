@@ -74,7 +74,7 @@ export default function Fin() {
         </div>
 
         <p className="mt-12 text-center font-inter text-[10px] uppercase tracking-widest text-warmGrey">
-          Back to top — siffaatgandhi.com / spotlight
+          Back to top — siffaatgandhi.online / spotlight
         </p>
       </div>
     </section>

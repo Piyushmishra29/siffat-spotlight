@@ -26,9 +26,16 @@ export default function Hero() {
         }}
       >
         <picture>
+          {/* Mobile uses pink-ck.jpg — tall portrait (5344x9504) fits the
+              mobile aspect ratio much better than red-door, which gets
+              cropped awkwardly at narrow viewports. */}
+          <source
+            media="(max-width: 768px) and (max-resolution: 1.5dppx)"
+            srcSet="/photos/sized/pink-ck-720.jpg"
+          />
           <source
             media="(max-width: 768px)"
-            srcSet="/photos/sized/red-door-720.jpg"
+            srcSet="/photos/sized/pink-ck-1280.jpg"
           />
           <source
             media="(max-width: 1280px)"
@@ -41,7 +48,7 @@ export default function Hero() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/photos/sized/red-door-1920.jpg"
-            alt="Siffaat Gandhi — actor portfolio cover, red door portrait, Mumbai"
+            alt="Siffaat Gandhi — actor portfolio cover, Mumbai"
             fetchPriority="high"
             decoding="async"
             className="absolute inset-0 h-full w-full object-cover"
@@ -62,13 +69,13 @@ export default function Hero() {
           MUMBAI · MMXXVI
         </p>
         <p className="mt-5 font-inter text-[10px] md:text-[11px] uppercase tracking-widest text-paper/75 drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
-          SIFFAATGANDHI.COM / SPOTLIGHT
+          SIFFAATGANDHI.ONLINE / SPOTLIGHT
         </p>
       </div>
 
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-[85%] hero-top-scrim"
+        className="pointer-events-none absolute inset-0 z-[5] hero-top-scrim"
       />
       <div
         aria-hidden
