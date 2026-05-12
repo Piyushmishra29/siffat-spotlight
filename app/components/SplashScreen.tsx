@@ -2,15 +2,14 @@
 
 import { useEffect, useState } from "react";
 
-const SEEN_KEY = "sg-splash-seen";
 const HARD_CAP_MS = 2600;
 const MIN_VISIBLE_MS = 1700;
 const HERO_SRC = "/photos/sized/red-door-1280.jpg";
 
 /**
  * First-paint splash. Hides after the hero photo decodes + fonts are ready,
- * or at HARD_CAP_MS — whichever comes first. Only shows on hard refresh /
- * fresh tab open (sessionStorage gates repeat displays in the same session).
+ * or at HARD_CAP_MS — whichever comes first. Plays on every page load
+ * (including reloads) — there is no session gate.
  */
 export default function SplashScreen() {
   const [show, setShow] = useState(true);
@@ -18,11 +17,6 @@ export default function SplashScreen() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-
-    if (sessionStorage.getItem(SEEN_KEY)) {
-      setShow(false);
-      return;
-    }
 
     const start = performance.now();
     let timeoutId = 0;
@@ -34,7 +28,6 @@ export default function SplashScreen() {
         setLeaving(true);
         window.setTimeout(() => {
           setShow(false);
-          sessionStorage.setItem(SEEN_KEY, "1");
         }, 600);
       }, remaining);
     };
