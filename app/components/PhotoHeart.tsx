@@ -10,7 +10,6 @@ const PHOTOS = [
   "/photos/rose.jpg",
   "/photos/gold-crop.jpg",
   "/photos/sky-bangles.jpg",
-  "/photos/cover-suit.jpg",
   "/photos/red-brick.jpg",
   "/photos/glass-lean.jpg",
   "/photos/pink-ck.jpg",
@@ -28,8 +27,8 @@ const PHOTOS = [
   "/photos/films/kalamanch.jpg",
 ];
 
-// 13 cols × 11 rows = 90 tile heart
-const HEART: number[][] = [
+// Desktop 13×11, 90 tiles
+const HEART_LG: number[][] = [
   [0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0],
   [1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1],
   [1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
@@ -41,6 +40,17 @@ const HEART: number[][] = [
   [0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+];
+
+// Mobile 9×7, 38 tiles — each tile reads at a glance
+const HEART_SM: number[][] = [
+  [0, 1, 1, 0, 0, 0, 1, 1, 0],
+  [1, 1, 1, 1, 0, 1, 1, 1, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [0, 1, 1, 1, 1, 1, 1, 1, 0],
+  [0, 0, 1, 1, 1, 1, 1, 0, 0],
+  [0, 0, 0, 1, 1, 1, 0, 0, 0],
+  [0, 0, 0, 0, 1, 0, 0, 0, 0],
 ];
 
 function seeded(n: number) {
@@ -58,10 +68,10 @@ type Tile = {
   photo: string;
 };
 
-const TILES: Tile[] = (() => {
+function buildTiles(heart: number[][]): Tile[] {
   const list: Tile[] = [];
   let i = 0;
-  HEART.forEach((row, rIdx) => {
+  heart.forEach((row, rIdx) => {
     row.forEach((cell, cIdx) => {
       if (!cell) return;
       list.push({
@@ -77,7 +87,10 @@ const TILES: Tile[] = (() => {
     });
   });
   return list;
-})();
+}
+
+const TILES_LG = buildTiles(HEART_LG);
+const TILES_SM = buildTiles(HEART_SM);
 
 const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
@@ -88,6 +101,16 @@ type Props = {
 export default function PhotoHeart({ caption }: Props) {
   const sectionRef = useRef<HTMLElement>(null);
   const [progress, setProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const onChange = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -128,7 +151,12 @@ export default function PhotoHeart({ caption }: Props) {
     };
   }, []);
 
-  const tiles = useMemo(() => TILES, []);
+  const cols = isMobile ? 9 : 13;
+  const rows = isMobile ? 7 : 11;
+  const tiles = useMemo(
+    () => (isMobile ? TILES_SM : TILES_LG),
+    [isMobile],
+  );
 
   return (
     <section
@@ -138,10 +166,10 @@ export default function PhotoHeart({ caption }: Props) {
     >
       <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden px-2 md:px-6">
         <div
-          className="grid gap-[3px] md:gap-[5px] w-[min(92vw,820px)]"
+          className="grid gap-[3px] md:gap-[5px] w-[min(94vw,820px)]"
           style={{
-            gridTemplateColumns: "repeat(13, minmax(0, 1fr))",
-            gridTemplateRows: "repeat(11, auto)",
+            gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
+            gridTemplateRows: `repeat(${rows}, auto)`,
           }}
         >
           {tiles.map((tile, i) => {
