@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useFadeIn } from "@/lib/useFadeIn";
+import ChapterEyebrow from "./ChapterEyebrow";
 
 const GALLERY: { src: string; alt: string }[] = [
   { src: "/photos/red-door.jpg", alt: "Red door — lehenga and leather" },
@@ -27,9 +28,7 @@ export default function Gallery() {
       >
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="mb-4 font-inter text-[10px] uppercase tracking-widest text-pink">
-              RANGE.
-            </p>
+            <ChapterEyebrow n="08" label="RANGE" className="mb-4" />
             <h2
               className="font-display uppercase leading-[0.9] tracking-tight2 text-ink"
               style={{ fontSize: "clamp(3rem, 9vw, 8rem)" }}

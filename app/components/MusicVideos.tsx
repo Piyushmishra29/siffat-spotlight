@@ -3,6 +3,7 @@
 import { musicVideos, youtubeId } from "@/lib/content";
 import { useFadeIn } from "@/lib/useFadeIn";
 import LiteYouTube from "./LiteYouTube";
+import ChapterEyebrow from "./ChapterEyebrow";
 
 const POSTERS: Record<string, string> = {
   "SUN TOH NA": "/photos/sun-toh-na.jpg",
@@ -20,9 +21,7 @@ export default function MusicVideos() {
           (isVisible ? "is-visible" : "")
         }
       >
-        <p className="mb-4 font-inter text-[10px] uppercase tracking-widest text-pink">
-          IN MOTION.
-        </p>
+        <ChapterEyebrow n="03" label="MOTION" className="mb-4" />
         <h2
           className="font-display uppercase leading-[0.9] tracking-tight2 text-ink"
           style={{ fontSize: "clamp(2.4rem, 7vw, 6rem)" }}
@@ -35,7 +34,11 @@ export default function MusicVideos() {
         <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12">
           {musicVideos.map((mv) => {
             const id = youtubeId(mv.url) ?? "";
-            const poster = POSTERS[mv.title] ?? "/photos/cover-suit.jpg";
+            const poster =
+              POSTERS[mv.title] ??
+              (id
+                ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
+                : "/photos/pink-ck.jpg");
             return (
               <figure key={mv.title} className="flex flex-col">
                 <LiteYouTube ytId={id} title={mv.title} poster={poster} />

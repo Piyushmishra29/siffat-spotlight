@@ -42,7 +42,11 @@ export default function StickerWiggle({
     transform: `rotate(${rotate}deg)`,
   };
   return (
-    <div style={style} className={`sticker-wiggle pointer-events-none ${className}`}>
+    <div
+      style={style}
+      className={`sticker-wiggle pointer-events-none ${className}`}
+      aria-hidden="true"
+    >
       {children}
     </div>
   );

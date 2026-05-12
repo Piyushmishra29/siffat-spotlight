@@ -2,6 +2,7 @@
 
 import { storyCopy } from "@/lib/content";
 import { useFadeIn } from "@/lib/useFadeIn";
+import ChapterEyebrow from "./ChapterEyebrow";
 
 export default function Story() {
   const { ref, isVisible } = useFadeIn<HTMLDivElement>();
@@ -16,9 +17,7 @@ export default function Story() {
           (isVisible ? "is-visible" : "")
         }
       >
-        <p className="font-inter text-[10px] uppercase tracking-widest text-pink">
-          STORY.
-        </p>
+        <ChapterEyebrow n="01" label="STORY" />
 
         <h2
           className="mt-6 font-display uppercase leading-[0.88] tracking-tight2 text-ink"

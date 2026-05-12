@@ -42,13 +42,13 @@ export default function Fin() {
             >
               FIN.
             </span>
-            {/* Cyan SG box hanging off right */}
             <span
-              className="absolute right-[-1px] top-0 hidden md:flex items-center justify-center bg-pink text-paper"
+              className="absolute right-[-1px] top-0 hidden md:flex items-center justify-center bg-cyan text-ink"
               style={{ width: 140, height: "100%" }}
+              aria-hidden="true"
             >
               <span
-                className="font-garamond italic leading-none text-paper"
+                className="font-garamond italic leading-none"
                 style={{ fontSize: 88 }}
               >
                 SG

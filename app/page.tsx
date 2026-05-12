@@ -74,7 +74,7 @@ export default function Home() {
 
       <MusicVideos />
 
-      <OliveSection eyebrow="TRAINING · MENTOR · THEATRE">
+      <OliveSection eyebrow="04 / 08 — TRAINING · MENTOR · THEATRE">
         <p
           className="font-display uppercase leading-[0.9] tracking-tight2 text-paper"
           style={{ fontSize: "clamp(2rem, 5.5vw, 4.5rem)" }}
