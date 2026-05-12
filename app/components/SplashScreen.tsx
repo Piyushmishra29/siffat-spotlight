@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 
 const SEEN_KEY = "sg-splash-seen";
-const HARD_CAP_MS = 1100;
-const HERO_SRC = "/photos/red-door.jpg";
+const HARD_CAP_MS = 2600;
+const MIN_VISIBLE_MS = 1700;
+const HERO_SRC = "/photos/sized/red-door-1280.jpg";
 
 /**
  * First-paint splash. Hides after the hero photo decodes + fonts are ready,
@@ -28,14 +29,13 @@ export default function SplashScreen() {
 
     const dismiss = () => {
       const elapsed = performance.now() - start;
-      const minVisible = 700;
-      const remaining = Math.max(0, minVisible - elapsed);
+      const remaining = Math.max(0, MIN_VISIBLE_MS - elapsed);
       timeoutId = window.setTimeout(() => {
         setLeaving(true);
         window.setTimeout(() => {
           setShow(false);
           sessionStorage.setItem(SEEN_KEY, "1");
-        }, 450);
+        }, 600);
       }, remaining);
     };
 
@@ -72,7 +72,7 @@ export default function SplashScreen() {
     <div
       aria-hidden="true"
       className={
-        "fixed inset-0 z-[120] flex items-center justify-center bg-paper transition-opacity duration-[450ms] ease-out " +
+        "fixed inset-0 z-[120] flex items-center justify-center bg-paper transition-opacity duration-[600ms] ease-out " +
         (leaving ? "opacity-0 pointer-events-none" : "opacity-100")
       }
     >
