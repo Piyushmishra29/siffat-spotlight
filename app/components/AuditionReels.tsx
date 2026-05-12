@@ -24,8 +24,8 @@ export default function AuditionReels() {
         >
           THE TAPE.
         </h2>
-        <p className="mt-4 font-garamond italic text-warmGrey text-base md:text-xl">
-          Six self-tapes from the room. Playing live.
+        <p className="mt-6 max-w-[760px] font-garamond italic text-warmGrey text-base md:text-xl leading-[1.45]">
+          I believe I bring a certain emotional honesty to the screen. Whether it&rsquo;s vulnerability, intensity, softness, confidence, or chaos — I enjoy exploring every shade of human emotion through my work.
         </p>
 
         <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4">

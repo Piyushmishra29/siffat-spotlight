@@ -132,6 +132,17 @@ export default function Home() {
 
       <StickersScatter />
 
+      <PinkBlockQuote
+        density="tight"
+        attribution="— SIFFAAT GANDHI"
+      >
+        At the heart of it all,
+        <br />
+        I&rsquo;m just someone chasing stories, moments, and characters
+        <br className="hidden md:block" />
+        {" "}that leave people feeling something real.
+      </PinkBlockQuote>
+
       <Contact />
 
       <Fin />

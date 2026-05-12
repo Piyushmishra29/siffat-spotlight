@@ -46,9 +46,11 @@ export default function Story() {
         ))}
       </div>
 
-      <p className="mt-12 font-garamond italic text-pink text-lg md:text-xl tracking-wide">
-        {storyCopy.signature}
-      </p>
+      {storyCopy.signature && (
+        <p className="mt-12 font-garamond italic text-pink text-lg md:text-xl tracking-wide">
+          {storyCopy.signature}
+        </p>
+      )}
     </ScrollPinned>
   );
 }
