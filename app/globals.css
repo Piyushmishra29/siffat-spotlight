@@ -155,6 +155,54 @@ body {
   }
 }
 
+/* Splash screen entry — cyan SG square scales up, then pink siffaat band
+   slides up from below. One-shot, runs on first paint only. */
+.splash-square {
+  transform: scale(0);
+  animation: splash-square-in 320ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  transform-origin: center;
+}
+.splash-band-inner {
+  transform: translateY(100%);
+  animation: splash-band-in 380ms cubic-bezier(0.2, 0.7, 0.2, 1) 220ms forwards;
+}
+@keyframes splash-square-in {
+  to { transform: scale(1); }
+}
+@keyframes splash-band-in {
+  to { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash-square, .splash-band-inner {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* Hero one-shot word reveal — each <span class="hero-word"> rises from
+   below + de-rotates on mount. Stagger delay applied inline per word. */
+.hero-word {
+  display: inline-block;
+  transform: translateY(110%) rotate(2deg);
+  opacity: 0;
+  animation: hero-word-up 0.9s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes hero-word-up {
+  0%   { transform: translateY(110%) rotate(2deg); opacity: 0; }
+  60%  { opacity: 1; }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-word {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
 /* Marquee track — seamless loop. The component renders two identical
    passes inline; the keyframe translates the track by -50% so the second
    pass slides into place where the first started. */
