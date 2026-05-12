@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useFadeIn } from "@/lib/useFadeIn";
+import { useScrollProgress } from "@/lib/useScrollProgress";
+import { staggerRise } from "@/lib/motion";
 import ChapterEyebrow from "./ChapterEyebrow";
 
 const GALLERY: { src: string; alt: string }[] = [
@@ -16,15 +17,12 @@ const GALLERY: { src: string; alt: string }[] = [
 ];
 
 export default function Gallery() {
-  const { ref, isVisible } = useFadeIn<HTMLDivElement>();
+  const { ref, progress } = useScrollProgress<HTMLDivElement>();
   return (
     <section className="bg-pink py-16 md:py-20">
       <div
         ref={ref}
-        className={
-          "mx-auto max-w-[1600px] px-6 md:pl-[180px] md:pr-12 scroll-fade " +
-          (isVisible ? "is-visible" : "")
-        }
+        className="mx-auto max-w-[1600px] px-6 md:pl-[180px] md:pr-12"
       >
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -44,20 +42,34 @@ export default function Gallery() {
         </div>
 
         <div className="mt-12 columns-1 gap-3 md:columns-2 md:gap-5">
-          {GALLERY.map((g) => (
-            <figure key={g.src} className="mb-3 break-inside-avoid md:mb-5">
-              <div className="relative w-full">
-                <Image
-                  src={g.src}
-                  alt={g.alt}
-                  width={1200}
-                  height={1600}
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="block h-auto w-full object-cover"
-                />
-              </div>
-            </figure>
-          ))}
+          {GALLERY.map((g, i) => {
+            const motion = staggerRise(progress, 0.05 + i * 0.05);
+            const drift = (progress - 0.5) * (i % 2 === 0 ? 14 : -14);
+            return (
+              <figure
+                key={g.src}
+                className="mb-3 break-inside-avoid md:mb-5 overflow-hidden"
+                style={{ ...motion, willChange: "transform, opacity" }}
+              >
+                <div
+                  className="relative w-full overflow-hidden"
+                  style={{
+                    transform: `translate3d(0, ${drift}px, 0)`,
+                    willChange: "transform",
+                  }}
+                >
+                  <Image
+                    src={g.src}
+                    alt={g.alt}
+                    width={1200}
+                    height={1600}
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="block h-auto w-full object-cover"
+                  />
+                </div>
+              </figure>
+            );
+          })}
         </div>
       </div>
     </section>

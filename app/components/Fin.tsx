@@ -1,6 +1,7 @@
 "use client";
 
-import { useFadeIn } from "@/lib/useFadeIn";
+import { useScrollProgress } from "@/lib/useScrollProgress";
+import { easeOutCubic, tileLocal } from "@/lib/motion";
 import Bindi from "./stickers/Bindi";
 import MumbaiHeart from "./stickers/MumbaiHeart";
 import ChaiCup from "./stickers/ChaiCup";
@@ -13,7 +14,13 @@ import StickerWiggle from "./stickers/StickerWiggle";
  * Whole slab is a button → scroll to top.
  */
 export default function Fin() {
-  const { ref, isVisible } = useFadeIn<HTMLDivElement>();
+  const { ref, progress } = useScrollProgress<HTMLDivElement>();
+  const e = easeOutCubic(tileLocal(progress, 0.05, 0.6));
+  const motion = {
+    transform: `translate3d(0, ${(1 - e) * 36}px, 0) scale(${0.97 + e * 0.03})`,
+    opacity: 0.0 + e,
+    willChange: "transform, opacity",
+  } as const;
   const onClick = () => {
     if (typeof window !== "undefined") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -23,10 +30,8 @@ export default function Fin() {
     <section className="relative bg-paper py-24 md:py-32 overflow-hidden">
       <div
         ref={ref}
-        className={
-          "relative mx-auto max-w-[1400px] px-6 md:pl-[180px] md:pr-12 scroll-fade " +
-          (isVisible ? "is-visible" : "")
-        }
+        className="relative mx-auto max-w-[1400px] px-6 md:pl-[180px] md:pr-12"
+        style={motion}
       >
         <div className="relative flex items-stretch justify-center">
           <button

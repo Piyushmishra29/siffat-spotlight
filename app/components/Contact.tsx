@@ -1,18 +1,23 @@
 "use client";
 
 import { contact, bio } from "@/lib/content";
-import { useFadeIn } from "@/lib/useFadeIn";
+import { useScrollProgress } from "@/lib/useScrollProgress";
+import { easeOutCubic, tileLocal } from "@/lib/motion";
 
 export default function Contact() {
-  const { ref, isVisible } = useFadeIn<HTMLDivElement>();
+  const { ref, progress } = useScrollProgress<HTMLDivElement>();
+  const e = easeOutCubic(tileLocal(progress, 0.05, 0.6));
+  const motion = {
+    transform: `translate3d(0, ${(1 - e) * 28}px, 0)`,
+    opacity: 0.0 + e,
+    willChange: "transform, opacity",
+  } as const;
   return (
     <section className="bg-olive text-paper py-16 md:py-24">
       <div
         ref={ref}
-        className={
-          "mx-auto max-w-4xl px-6 md:pl-[200px] md:pr-12 scroll-fade " +
-          (isVisible ? "is-visible" : "")
-        }
+        className="mx-auto max-w-4xl px-6 md:pl-[200px] md:pr-12"
+        style={motion}
       >
         <p className="font-inter text-[10px] uppercase tracking-widest text-pink text-center">
           LET&rsquo;S WORK.

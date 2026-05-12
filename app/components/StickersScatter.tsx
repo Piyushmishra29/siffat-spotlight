@@ -1,6 +1,6 @@
 "use client";
 
-import { useFadeIn } from "@/lib/useFadeIn";
+import { useScrollProgress } from "@/lib/useScrollProgress";
 import Bindi from "./stickers/Bindi";
 import ChaiCup from "./stickers/ChaiCup";
 import Clapperboard from "./stickers/Clapperboard";
@@ -8,20 +8,33 @@ import MumbaiHeart from "./stickers/MumbaiHeart";
 import IndiaMap from "./stickers/IndiaMap";
 import StickerWiggle from "./stickers/StickerWiggle";
 
-/**
- * White section. Five hand-drawn stickers scattered with tuned positions
- * and rotations. Tracked-caps caption top-left.
- */
+function Drift({
+  progress,
+  multiplier,
+  children,
+}: {
+  progress: number;
+  multiplier: number;
+  children: React.ReactNode;
+}) {
+  const y = (progress - 0.5) * multiplier;
+  return (
+    <div
+      className="pointer-events-none"
+      style={{ transform: `translate3d(0, ${y}px, 0)`, willChange: "transform" }}
+    >
+      {children}
+    </div>
+  );
+}
+
 export default function StickersScatter() {
-  const { ref, isVisible } = useFadeIn<HTMLDivElement>();
+  const { ref, progress } = useScrollProgress<HTMLDivElement>();
   return (
     <section className="relative bg-paper overflow-hidden">
       <div
         ref={ref}
-        className={
-          "relative mx-auto max-w-[1500px] px-6 md:pl-[180px] md:pr-12 py-16 md:py-20 scroll-fade min-h-[560px] md:min-h-[720px] " +
-          (isVisible ? "is-visible" : "")
-        }
+        className="relative mx-auto max-w-[1500px] px-6 md:pl-[180px] md:pr-12 py-16 md:py-20 min-h-[560px] md:min-h-[720px]"
       >
         <p className="font-inter text-[10px] uppercase tracking-widest text-pink">
           SCENES, AT REST.
@@ -38,42 +51,62 @@ export default function StickersScatter() {
           A few things she carries around — between takes, between cities.
         </p>
 
-        {/* Mobile sticker scatter — clustered at the bottom of the section */}
+        {/* Mobile scatter */}
         <div className="relative mt-8 h-[300px] md:hidden">
-          <StickerWiggle bottom={140} left={"4%"} rotate={-8} width={92}>
-            <MumbaiHeart className="block w-full h-auto" />
-          </StickerWiggle>
-          <StickerWiggle bottom={200} right={"6%"} rotate={12} width={78}>
-            <Bindi className="block w-full h-auto" />
-          </StickerWiggle>
-          <StickerWiggle bottom={20} left={"32%"} rotate={-14} width={120}>
-            <Clapperboard className="block w-full h-auto" />
-          </StickerWiggle>
-          <StickerWiggle bottom={40} right={"8%"} rotate={9} width={80}>
-            <ChaiCup className="block w-full h-auto" />
-          </StickerWiggle>
-          <StickerWiggle bottom={140} left={"40%"} rotate={-5} width={80}>
-            <IndiaMap className="block w-full h-auto" />
-          </StickerWiggle>
+          <Drift progress={progress} multiplier={-40}>
+            <StickerWiggle bottom={140} left={"4%"} rotate={-8} width={92}>
+              <MumbaiHeart className="block w-full h-auto" />
+            </StickerWiggle>
+          </Drift>
+          <Drift progress={progress} multiplier={30}>
+            <StickerWiggle bottom={200} right={"6%"} rotate={12} width={78}>
+              <Bindi className="block w-full h-auto" />
+            </StickerWiggle>
+          </Drift>
+          <Drift progress={progress} multiplier={-25}>
+            <StickerWiggle bottom={20} left={"32%"} rotate={-14} width={120}>
+              <Clapperboard className="block w-full h-auto" />
+            </StickerWiggle>
+          </Drift>
+          <Drift progress={progress} multiplier={45}>
+            <StickerWiggle bottom={40} right={"8%"} rotate={9} width={80}>
+              <ChaiCup className="block w-full h-auto" />
+            </StickerWiggle>
+          </Drift>
+          <Drift progress={progress} multiplier={-35}>
+            <StickerWiggle bottom={140} left={"40%"} rotate={-5} width={80}>
+              <IndiaMap className="block w-full h-auto" />
+            </StickerWiggle>
+          </Drift>
         </div>
 
-        {/* Desktop sticker scatter — positioned across the right & middle */}
+        {/* Desktop scatter */}
         <div className="hidden md:block">
-          <StickerWiggle top={60} right={"6%"} rotate={-8} width={140}>
-            <MumbaiHeart className="block w-full h-auto" />
-          </StickerWiggle>
-          <StickerWiggle top={220} right={"24%"} rotate={12} width={110}>
-            <Bindi className="block w-full h-auto" />
-          </StickerWiggle>
-          <StickerWiggle bottom={120} right={"40%"} rotate={-14} width={160}>
-            <Clapperboard className="block w-full h-auto" />
-          </StickerWiggle>
-          <StickerWiggle bottom={70} right={"12%"} rotate={9} width={120}>
-            <ChaiCup className="block w-full h-auto" />
-          </StickerWiggle>
-          <StickerWiggle top={350} right={"50%"} rotate={-5} width={120}>
-            <IndiaMap className="block w-full h-auto" />
-          </StickerWiggle>
+          <Drift progress={progress} multiplier={-50}>
+            <StickerWiggle top={60} right={"6%"} rotate={-8} width={140}>
+              <MumbaiHeart className="block w-full h-auto" />
+            </StickerWiggle>
+          </Drift>
+          <Drift progress={progress} multiplier={40}>
+            <StickerWiggle top={220} right={"24%"} rotate={12} width={110}>
+              <Bindi className="block w-full h-auto" />
+            </StickerWiggle>
+          </Drift>
+          <Drift progress={progress} multiplier={-30}>
+            <StickerWiggle bottom={120} right={"40%"} rotate={-14} width={160}>
+              <Clapperboard className="block w-full h-auto" />
+            </StickerWiggle>
+          </Drift>
+          <Drift progress={progress} multiplier={55}>
+            <StickerWiggle bottom={70} right={"12%"} rotate={9} width={120}>
+              <ChaiCup className="block w-full h-auto" />
+            </StickerWiggle>
+          </Drift>
+          <Drift progress={progress} multiplier={-45}>
+            <StickerWiggle top={350} right={"50%"} rotate={-5} width={120}>
+              <IndiaMap className="block w-full h-auto" />
+            </StickerWiggle>
+          </Drift>
         </div>
       </div>
     </section>
