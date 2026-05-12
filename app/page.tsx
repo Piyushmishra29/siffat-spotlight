@@ -5,6 +5,7 @@ import Story from "./components/Story";
 import PhotoTrio from "./components/PhotoTrio";
 import OnScreen from "./components/OnScreen";
 import PhotoHeart from "./components/PhotoHeart";
+import PinnedImage from "./components/PinnedImage";
 import MusicVideos from "./components/MusicVideos";
 import OliveSection from "./components/OliveSection";
 import BrandWork from "./components/BrandWork";
@@ -102,6 +103,13 @@ export default function Home() {
       <BrandWork />
 
       <ShortFilms />
+
+      <PinnedImage
+        src="/photos/glass-lean.jpg"
+        alt="Siffaat — off-set, between takes"
+        caption="OFF SET · BETWEEN TAKES."
+        position="center 35%"
+      />
 
       <AuditionReels />
 
