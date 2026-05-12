@@ -91,13 +91,10 @@ export default function Home() {
         >
           And theatre with him through{" "}
           <span className="text-pink not-italic font-display uppercase tracking-tight2">
-            ANTAR ANGAN
+            ANTERANG
           </span>{" "}
           — where the work is slower, harder, and more honest than any set
           she&rsquo;s been on.
-        </p>
-        <p className="mt-10 font-inter text-[10px] uppercase tracking-widest text-paper/70">
-          MMA KEEPS HER SHARP · YOGA KEEPS HER OPEN · BOTH KEEP HER READY.
         </p>
       </OliveSection>
 
