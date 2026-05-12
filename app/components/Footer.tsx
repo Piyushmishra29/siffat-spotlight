@@ -9,33 +9,18 @@ export default function Footer() {
           <span className="mx-2 text-pink">·</span>
           MMXXVI
         </p>
-        <p
-          className="mt-3 text-center font-inter text-[10px] uppercase tracking-widest text-warmGrey/70"
-          style={{ lineHeight: "1.2" }}
-        >
-          <span className="inline-flex items-baseline justify-center gap-1.5">
-            <span>built with</span>
-            <span
-              aria-label="love"
-              className="text-pink"
-              style={{ transform: "translateY(0.5px)", display: "inline-block" }}
-            >
-              ♥
-            </span>
-            <span>by</span>
-            <span
-              className="font-garamond text-ink normal-case tracking-normal"
-              title="Piyush"
-              style={{
-                fontStyle: "italic",
-                fontSize: "13px",
-                lineHeight: 1,
-                transform: "translateY(1.5px)",
-                display: "inline-block",
-              }}
-            >
-              π
-            </span>
+        <p className="mt-3 text-center font-inter text-[10px] uppercase tracking-widest text-warmGrey/70">
+          built with{" "}
+          <span aria-label="love" className="text-pink">
+            ♥
+          </span>{" "}
+          by{" "}
+          <span
+            className="text-ink normal-case tracking-normal"
+            title="Piyush"
+            style={{ fontStyle: "italic" }}
+          >
+            π
           </span>
         </p>
       </div>
