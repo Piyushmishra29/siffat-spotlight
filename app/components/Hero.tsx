@@ -54,6 +54,11 @@ export default function Hero() {
         </p>
       </div>
 
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-0 z-[5] w-[70%] h-[55%] hero-title-scrim"
+      />
+
       <h1
         className="absolute right-0 z-10 font-display uppercase text-pink leading-[0.86] tracking-tight2 text-stroke-hero"
         style={{

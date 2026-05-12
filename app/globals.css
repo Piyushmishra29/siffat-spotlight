@@ -87,6 +87,17 @@ body {
   );
 }
 
+/* Radial scrim behind the pink hero title — top-right corner darkens
+   without dimming the whole photo. */
+.hero-title-scrim {
+  background: radial-gradient(
+    ellipse 70% 70% at 100% 0%,
+    rgba(0, 0, 0, 0.42) 0%,
+    rgba(0, 0, 0, 0.22) 35%,
+    rgba(0, 0, 0, 0) 70%
+  );
+}
+
 /* Wiggle animation for stickers */
 @keyframes wiggle-rot {
   0%,
