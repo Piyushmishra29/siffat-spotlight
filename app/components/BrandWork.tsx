@@ -67,7 +67,7 @@ export default function BrandWork() {
               >
                 <Image
                   src={s.file}
-                  alt={s.caption}
+                  alt={`Siffaat Gandhi — ${s.caption.toLowerCase()}, brand still`}
                   fill
                   sizes="(min-width: 768px) 58vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover/tile:scale-[1.04]"
@@ -88,7 +88,7 @@ export default function BrandWork() {
               >
                 <Image
                   src={s.file}
-                  alt={s.caption}
+                  alt={`Siffaat Gandhi — ${s.caption.toLowerCase()}, brand still`}
                   fill
                   sizes="(min-width: 768px) 42vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover/tile:scale-[1.04]"

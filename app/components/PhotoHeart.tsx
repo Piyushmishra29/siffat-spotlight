@@ -4,15 +4,15 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 
 const PHOTOS = [
-  "/photos/bindi.jpg",
-  "/photos/red-door.jpg",
+  "/photos/sized/bindi-720.jpg",
+  "/photos/sized/red-door-720.jpg",
   "/photos/vogue.jpg",
   "/photos/rose.jpg",
   "/photos/gold-crop.jpg",
-  "/photos/sky-bangles.jpg",
-  "/photos/red-brick.jpg",
-  "/photos/glass-lean.jpg",
-  "/photos/pink-ck.jpg",
+  "/photos/sized/sky-bangles-720.jpg",
+  "/photos/sized/red-brick-720.jpg",
+  "/photos/sized/glass-lean-720.jpg",
+  "/photos/sized/pink-ck-720.jpg",
   "/photos/sun-toh-na.jpg",
   "/photos/yaar-ka-sataya-hua.jpg",
   "/photos/brands/date-night.jpg",

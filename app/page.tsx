@@ -41,20 +41,20 @@ export default function Home() {
       <PhotoTrio
         tiles={[
           {
-            src: "/photos/red-door.jpg",
-            alt: "Red door — lehenga & leather",
+            src: "/photos/sized/red-door-1280.jpg",
+            alt: "Siffaat Gandhi — red door portrait, lehenga and leather, Mumbai editorial",
             caption: "RED DOOR · MUMBAI",
             position: "center",
           },
           {
-            src: "/photos/bindi.jpg",
-            alt: "Bindi — close-up portrait",
+            src: "/photos/sized/bindi-1280.jpg",
+            alt: "Siffaat Gandhi — bindi close-up portrait, editorial",
             caption: "BINDI · CLOSE-UP",
             position: "center 25%",
           },
           {
-            src: "/photos/red-brick.jpg",
-            alt: "Red brick — ethnic white-gold",
+            src: "/photos/sized/red-brick-1280.jpg",
+            alt: "Siffaat Gandhi — red brick ethnic look, white and gold detailing",
             caption: "RED BRICK · ETHNIC",
             position: "center",
           },
@@ -120,8 +120,8 @@ export default function Home() {
       <ShortFilms />
 
       <PinnedImage
-        src="/photos/glass-lean.jpg"
-        alt="Siffaat — off-set, between takes"
+        src="/photos/sized/glass-lean-1280.jpg"
+        alt="Siffaat Gandhi — off-set portrait, between takes"
         caption="OFF SET · BETWEEN TAKES."
         position="center 35%"
       />
