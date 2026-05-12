@@ -1,18 +1,16 @@
 <div align="center">
 
-# SIFFAAT, BY SIFFAAT, FOR SIFFAAT.
+# SIFFAAT GANDHI. ONE LOOK. EVERY ROLE.
 
 ### A SPOTLIGHT · Nº 01 · MUMBAI · MMXXVI
 
-*A long-scroll editorial site for actor & model **Siffaat Gandhi**.*
-*Built like a magazine. Lives on the web.*
-
-![Hero](screenshots/readme/01-hero.png)
+*A long-scroll editorial site for actor **Siffaat Gandhi**.*
+*Built like a magazine. Lives on the web. Pitched to casting agents.*
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind](https://img.shields.io/badge/Tailwind-3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Status](https://img.shields.io/badge/Status-Live-FF2D9B?style=for-the-badge)](#deploy)
+[![Live](https://img.shields.io/badge/Live-siffaatgandhi.online-FF2D9B?style=for-the-badge)](https://siffaatgandhi.online/)
 
 </div>
 
@@ -20,117 +18,51 @@
 
 ## INTRO.
 
-This is the source for [**siffatgandhi.com**](https://siffatgandhi.com) — a single-page, scroll-driven, magazine-style spotlight for **Siffaat Gandhi**, a Mumbai-based actor, model, and producer of her own short films.
+Source for [**siffaatgandhi.online**](https://siffaatgandhi.online/) — a single-page, scroll-driven, magazine-style spotlight for **Siffaat Gandhi**, a Mumbai-based actor working across web series, TVCs, music videos, and short films.
 
-The reference is i-D Magazine's *Spotlight* series: editorial typography, full-bleed photography, hand-drawn stickers, bold colour blocks, and the kind of pacing you only get from a print designer.
+The reference is i-D Magazine's *Spotlight* series: editorial typography, full-bleed photography, hand-drawn stickers, bold colour blocks, scroll-driven motion, and the kind of pacing you only get from a print designer.
 
 > *"Presence in every frame. Versatility in every look."*
+
+The hero pitches casting agents in three lines: **SIFFAAT GANDHI · ONE LOOK · EVERY ROLE.**
 
 ---
 
 ## THE SCROLL.
 
-A 17-section single-page narrative. Each scene is its own component, dropped into `app/page.tsx` in order.
+A single-page narrative split into chapters. Each scene is its own component, composed in `app/page.tsx`. Numbered eyebrows (`01 / 08 — STORY`) anchor the magazine rhythm.
 
-### Nº 01 — Cover
+| Nº | Section | Component | Treatment |
+|----|---------|-----------|-----------|
+| — | Cover | `Hero` | Full-bleed red-door portrait, top-half scrim, three-line pink display caps with word-by-word kinetic reveal on mount, parallax on scroll |
+| Quote | "Presence in every frame." | `PinkBlockQuote` | Full-bleed pink, EB Garamond italic, scale-on-enter |
+| 01 | Story | `Story` via `ScrollPinned` | Sticky photo column right, narrative text left, inner parallax through frame |
+| — | Photo trio | `PhotoTrio` | Olive band, three frames, inline figcaptions, staggered entry |
+| Quote | "It's not performance — it's presence." | `PinkBlockQuote` | Tight density |
+| 02 | Series | `OnScreen` | 2-up web series cards, hover pink border slide |
+| — | Heart of photos | `PhotoHeart` | 90-tile heart (13×11 desktop, 9×7 mobile) of every photo, assembles on scroll inside a sticky frame |
+| 03 | Motion | `MusicVideos` | LiteYouTube tiles, stagger-rise |
+| 04 | Training | `OliveSection` | Saurabh Sachdeva / Antar Angan callout on olive |
+| — | Marquee | `Marquee` | Horizontal scroll of display caps · ink strip · pink accents |
+| 05 | Campaigns | `BrandWork` | Wordmark band + editorial 1-big-3-stacked stills grid on cream |
+| 06 | Produced | `ShortFilms` | 2-up film cards, pink border slide on hover |
+| — | Pinned image | `PinnedImage` | Full-bleed sticky photo with scale + inner parallax (priority-loaded) |
+| 07 | Self-tapes | `AuditionReels` + `AutoplayTape` | 6 reels, autoplay muted+looped when in view, click → YouTube |
+| 08 | Range | `Gallery` | 8-tile editorial grid on pink, varied col-spans, inner parallax drift per tile |
+| — | Stickers | `StickersScatter` | Polaroid anchor + clustered hand-drawn SVG stickers with wiggle |
+| — | Contact | `Contact` | Olive bg, paper text, big pink "LET'S WORK" |
+| — | Fin | `Fin` | Black slab with cyan SG hang-off, scroll-to-top |
+| — | Footer | `Footer` | Tracked caps signature + tiny "built with ♥ by π" |
 
-![Hero](screenshots/readme/01-hero.png)
+Persistent chrome (mounted in `app/layout.tsx`):
 
-Full-bleed cover-suit portrait. Massive pink display caps hanging off the right edge. Sticky **SG/siffat** colour block badge top-left. Credit stack top-right like the masthead of a magazine.
-
-### Nº 02 — Opening Quote
-
-![Pink Quote](screenshots/readme/02-pink-quote.png)
-
-Hot-pink full-bleed block. *"Presence in every frame. Versatility in every look."* — the line that anchors the whole portfolio.
-
-### Nº 03 — The Story
-
-![Story](screenshots/readme/03-story.png)
-
-From Ludhiana to Bombay. Drop-cap *S* in oxblood. Single-column intro, then a 2-column body. Italics in EB Garamond. Signed off — Siffaat.
-
-### Nº 04 — Photo Trio
-
-![Photo Trio](screenshots/readme/04-photo-trio.png)
-
-Three frames in olive: *Red Door · Bindi · Red Brick.* Captions tracked in mono caps.
-
-### Nº 05 — On Screen, In Series
-
-![On Screen](screenshots/readme/05-onscreen.png)
-
-Two web-series cards side by side — **Vimal Khanna** (MX/Amazon) and **Kalamanch** (KNVR Productions, Amazon Prime). Hover-pink wash.
-
-### Nº 06 — The Pyramid
-
-![Pyramid](screenshots/readme/06-pyramid.png)
-
-A stacked grid of repeating frames — *"One frame. Eighty-five takes."* — over an olive ground. Pure typographic theatre.
-
-### Nº 07 — In Motion
-
-![Music Videos](screenshots/readme/07-music.png)
-
-Two music-video cards. Lite-YouTube facade — no iframe until clicked, so the page stays fast.
-
-### Nº 08 — Training
-
-![Training](screenshots/readme/08-olive.png)
-
-Full-bleed olive section: **THE ACTOR'S TRUTH, under Saurabh Sachdeva.** Plus *Antar Angan* theatre in pink. MMA · Yoga · Both.
-
-### Nº 09 — TVCs & Campaigns
-
-![Brand Work](screenshots/readme/09-brands.png)
-
-15 brand wordmarks in tracked display caps, then a 4-up grid of campaign stills.
-
-### Nº 10 — The Tape
-
-![Tape](screenshots/readme/10-tape.png)
-
-Six audition self-tapes in a 3×2 grid. YouTube thumbnails auto-fetched, click-out to full video.
-
-### Nº 11 — Range
-
-![Range](screenshots/readme/11-range.png)
-
-Two-column masonry of editorial portraits. Six years of frames, six different rooms, one presence.
-
-### Nº 12 — Stickers From The Room
-
-![Stickers](screenshots/readme/12-stickers.png)
-
-Five hand-drawn SVG stickers — *Bindi · Chai Cup · Clapperboard · Mumbai Heart · India Map* — scattered with wiggle-on-hover animations. The most Indian thing on the page.
-
-### Nº 13 — Let's Work
-
-![Contact](screenshots/readme/13-contact.png)
-
-Massive pink *LET'S WORK* lockup. Phone · email · IG. *Based in Mumbai · Available worldwide.*
-
-### Nº 14 — FIN.
-
-![Fin](screenshots/readme/14-fin.png)
-
-The closing button. Big. Loud. *FIN.*
-
----
-
-## ON THE PHONE.
-
-The same scroll, redesigned for a 390pt viewport.
-
-<div align="center">
-
-<img src="screenshots/readme/mobile-01-hero.png" width="240" alt="Mobile hero" />
-&nbsp;
-<img src="screenshots/readme/mobile-02-quote.png" width="240" alt="Mobile quote" />
-&nbsp;
-<img src="screenshots/readme/mobile-03-quote2.png" width="240" alt="Mobile second quote" />
-
-</div>
+- **`SGBlock`** — sticky cyan-on-pink brand badge, desktop two-stack + mobile 56×56 cyan square
+- **`ScrollProgressBar`** — 2 px pink line tracking scroll position
+- **`AnchorNav`** — pill nav appears after scroll > 100vh, smooth-scroll to each section, active state via IntersectionObserver
+- **`LenisProvider`** — Lenis smooth scroll, easeOutQuart, 1.45s duration
+- **`Cursor`** — paper dot with `mix-blend-mode: difference`, expands + shows label on `data-cursor-label` tiles
+- **`GrainOverlay`** — SVG turbulence noise, 8-step keyframe shift, multiply blend at 7%
+- **`SplashScreen`** — first-paint SG badge entry, sessionStorage-gated so it never repeats
 
 ---
 
@@ -140,17 +72,18 @@ The same scroll, redesigned for a 390pt viewport.
 |---|---|
 | Framework | **Next.js 14** (app router, static export) |
 | Language | **TypeScript** |
-| Styles | **Tailwind CSS** + custom `@font-face` |
+| Styles | **Tailwind CSS** + custom utilities |
+| Smooth scroll | **Lenis** |
 | Display type | **Archivo Black** (Google Fonts) |
 | Body type | **EB Garamond** (Google Fonts) |
-| Mono / labels | **Inter** (Google Fonts) |
-| Images | `next/image` with `unoptimized: true` (static export) |
-| Motion | CSS keyframes + `IntersectionObserver`, no animation lib |
-| Embeds | Custom **lite-youtube** facade |
-| Host | **Hostinger** shared hosting via FTP |
+| Labels / mono | **Inter** (Google Fonts) |
+| Images | `next/image` + responsive `<picture>` srcset for hero |
+| Motion | CSS keyframes + custom `useScrollProgress` hook, no animation lib |
+| Embeds | `LiteYouTube` (click-to-play) + `AutoplayTape` (in-view muted loop) |
+| Host | **Hostinger** — git-connected auto-deploy on push to `main` |
 | Output | `out/` — pure HTML/CSS/JS, no server |
 
-No CMS. No analytics. No tracker. No JS framework for animations. The whole page is **under 1 MB before images**.
+No analytics, no tracker, no JS animation framework.
 
 ---
 
@@ -158,14 +91,63 @@ No CMS. No analytics. No tracker. No JS framework for animations. The whole page
 
 ```
 #FFFFFF   Paper      pure white ground
-#F4F1EC   Cream      reserved accent (LiteYouTube play frame)
-#0A0A0A   Ink        body type, base black
+#F4F1EC   Cream      BrandWork section, warm break
+#0A0A0A   Ink        body type, base black, marquee strip
 #FF2D9B   Pink       the spotlight colour
 #FFD9EC   Pink Soft  hover wash on cards
-#5C5A45   Olive      full-bleed editorial blocks
+#5C5A45   Olive      Training, Photo Trio, Photo Heart, Contact
 #666666   Warm Grey  captions, supporting type
-#9BE8E8   Cyan       SG block badge accent
+#9BE8E8   Cyan       SG badge, Fin SG hang-off
 ```
+
+Colour rhythm: paper / pink / olive / cream alternation across the scroll prevents any stretch of identical bg, then ink moments (Marquee, PinnedImage, Fin slab) punctuate.
+
+---
+
+## TYPOGRAPHY.
+
+- **Display caps** — Archivo Black, `clamp(2.4rem, 7vw, 6rem)` for section h2s, `clamp(3.25rem, 11vw, 9.5rem)` for the hero h1. Kerned tight via `tracking-tight2 (-0.02em)`.
+- **Body** — EB Garamond, italic for dek / quote, regular for long-form. Drop cap in pink on the Story opener.
+- **Labels** — Inter at 10–11 px, uppercase, `tracking-widest (0.18em)`. The chapter eyebrow component (`ChapterEyebrow`) standardises the slug format `NN / TT — LABEL`.
+
+---
+
+## MOTION.
+
+Everything scroll-driven; nothing time-driven except the splash + marquee + grain.
+
+| Hook | Used by |
+|---|---|
+| `useScrollProgress` | Hero parallax + title float, PhotoTrio tile stagger + inner parallax, PhotoHeart assembly, ScrollPinned sticky photo, MusicVideos stagger, BrandWork wordmark fade + tile scale, ShortFilms cards, AuditionReels tiles, Gallery per-tile drift, StickersScatter per-sticker drift, PinkBlockQuote scale, OliveSection / Contact / Fin rise |
+| `useFadeIn` | Legacy, retained for one-shot fade utilities |
+| `IntersectionObserver` (direct) | `AnchorNav` active-section, `AutoplayTape` in-view trigger |
+
+Shared motion math lives in `lib/motion.ts` (`staggerRise`, `easeOutCubic`, `tileLocal`).
+
+All hooks respect `prefers-reduced-motion: reduce`.
+
+---
+
+## SEO.
+
+Targets four casting-agent audiences: Mumbai casting directors, OTT (Hindi web series), TVC / brand campaigns, international festival circuit.
+
+- `app/layout.tsx` — keyword-rich metadata, OG profile-type, Twitter large-image card, canonical, robots index+follow
+- `app/robots.ts` — Next 14 metadata route → `/robots.txt`
+- `app/sitemap.ts` → `/sitemap.xml`
+- JSON-LD `Person` schema with `jobTitle`, `image`, `sameAs` (Instagram), `address`, `alumniOf` (Saurabh Sachdeva training), `memberOf` (Antar Angan), `knowsLanguage`
+- `public/og-cover.jpg` — 1200×630 share card with name + tagline + domain on a black panel, portrait on the right
+- Section IDs (`#story`, `#series`, `#motion`, `#training`, `#campaigns`, `#produced`, `#tape`, `#range`, `#contact`) enable deep-linking and the AnchorNav highlight
+
+---
+
+## PERFORMANCE.
+
+- Hero ships responsive `<picture>` srcset (720w / 1280w / 1920w) instead of the 6.4 MB source. Preloaded in `<head>` via `<link rel="preload" as="image" imageSrcSet="...">` so LCP fires fast.
+- PinnedImage uses `priority` to skip lazy-load and avoid the black-hole moment.
+- AutoplayTape iframes mount only when the tile crosses 35 % intersection ratio; pauses out of view.
+- All scroll-driven transforms are `translate3d` + `scale` — no layout thrash.
+- Static export → CDN-friendly, no Node runtime.
 
 ---
 
@@ -174,38 +156,56 @@ No CMS. No analytics. No tracker. No JS framework for animations. The whole page
 ```
 siffat-spotlight/
 ├── app/
-│   ├── page.tsx                 # Orchestrates 18 sections
-│   ├── layout.tsx               # Font loading, metadata, OG
-│   ├── globals.css              # Tailwind + @font-face + fade-in
+│   ├── page.tsx                 # Composes the scroll
+│   ├── layout.tsx               # Fonts, metadata, JSON-LD, persistent chrome
+│   ├── globals.css              # Tailwind + utilities (grain, scrim, marquee, kinetic word, splash, editorial treatment)
+│   ├── robots.ts                # /robots.txt
+│   ├── sitemap.ts               # /sitemap.xml
 │   └── components/
-│       ├── SGBlock.tsx          # Sticky colour-block badge
-│       ├── Hero.tsx             # Cover + display caps
-│       ├── PinkBlockQuote.tsx   # Reusable full-bleed pink quote
-│       ├── Story.tsx            # Bio with drop cap
-│       ├── PhotoTrio.tsx        # 3-photo olive band
+│       ├── Hero.tsx             # Cover + kinetic title
+│       ├── PinkBlockQuote.tsx   # Reusable pink quote block
+│       ├── Story.tsx            # Bio with drop cap (wrapped in ScrollPinned)
+│       ├── ScrollPinned.tsx     # Sticky photo + parallax text pattern
+│       ├── PhotoTrio.tsx        # Three-photo olive band
+│       ├── PhotoHeart.tsx       # 90-tile (mobile 38-tile) scroll-assembled heart
 │       ├── OnScreen.tsx         # Web series cards
-│       ├── PhotoPyramid.tsx     # Repeating frames grid
 │       ├── MusicVideos.tsx      # Lite-YouTube tiles
-│       ├── OliveSection.tsx     # Training callout
-│       ├── BrandWork.tsx        # TVCs wordmarks + grid
-│       ├── ShortFilms.tsx       # Produced shorts
+│       ├── OliveSection.tsx     # Olive callout (training)
+│       ├── PinnedImage.tsx      # Full-bleed sticky image break
+│       ├── BrandWork.tsx        # TVCs wordmarks + editorial grid
+│       ├── ShortFilms.tsx       # Produced shorts cards
 │       ├── AuditionReels.tsx    # Tape grid
-│       ├── Gallery.tsx          # Masonry of portraits
-│       ├── StickersScatter.tsx  # Wiggle stickers
+│       ├── AutoplayTape.tsx     # In-view muted-loop YouTube iframe
+│       ├── Gallery.tsx          # Editorial 12-col grid
+│       ├── StickersScatter.tsx  # Polaroid + clustered stickers
 │       ├── Contact.tsx          # Let's work
-│       ├── Fin.tsx              # Closing button
-│       ├── Footer.tsx           # Tiny tracked caps
-│       ├── LiteYouTube.tsx      # YouTube facade
-│       └── stickers/            # SVG sticker components
+│       ├── Fin.tsx              # Closing slab
+│       ├── Footer.tsx           # Tracked caps + π signature
+│       ├── ChapterEyebrow.tsx   # NN / TT — LABEL slug
+│       ├── Marquee.tsx          # Horizontal text band
+│       ├── AnchorNav.tsx        # Sticky section nav
+│       ├── ScrollProgressBar.tsx
+│       ├── LenisProvider.tsx
+│       ├── Cursor.tsx           # Custom mouse cursor
+│       ├── GrainOverlay.tsx
+│       ├── SplashScreen.tsx
+│       ├── SGBlock.tsx          # Brand badge
+│       ├── LiteYouTube.tsx
+│       └── stickers/            # SVG sticker components + StickerWiggle
 ├── lib/
 │   ├── content.ts               # Typed Siffaat bio + credits
-│   └── useFadeIn.ts             # IntersectionObserver hook
+│   ├── useFadeIn.ts             # IntersectionObserver hook (legacy)
+│   ├── useScrollProgress.ts     # Per-section 0..1 scroll progress
+│   └── motion.ts                # staggerRise + easings
 ├── public/
-│   ├── photos/                  # Warm-graded portraits
+│   ├── og-cover.jpg             # 1200×630 share card
+│   ├── photos/                  # Editorial portraits
+│   │   ├── sized/               # Responsive hero variants
+│   │   ├── brands/              # Campaign stills
+│   │   └── films/               # Film stills
 │   └── fonts/                   # (currently using Google Fonts)
-├── screenshots/                 # Build artefacts + README assets
-├── next.config.mjs              # Static export config
-└── tailwind.config.ts           # Custom palette + display font
+├── next.config.mjs              # output: "export", trailingSlash, unoptimized
+└── tailwind.config.ts           # Palette + display/garamond/inter
 ```
 
 ---
@@ -216,33 +216,31 @@ siffat-spotlight/
 git clone git@github.com:Piyushmishra29/siffat-spotlight.git
 cd siffat-spotlight
 npm install
-npm run dev
+npm run dev          # http://localhost:3000  (or PORT=4000 npm run dev)
 ```
-
-Open [http://localhost:3000](http://localhost:3000).
 
 ---
 
 ## BUILD.
 
 ```bash
-npm run build
+npm run build        # writes static export to out/
 ```
 
-Outputs static HTML to `out/`. Drop it onto any static host.
+Outputs static HTML/CSS/JS. Drop `out/` onto any static host.
 
 ---
 
 ## DEPLOY.
 
-Hostinger shared hosting via FTP.
+Hostinger is **git-connected**. `git push origin main` triggers Hostinger to pull the repo, run `npm run build`, and publish `out/` to `public_html`. The site is live at [siffaatgandhi.online](https://siffaatgandhi.online/) within a minute or two.
+
+For ad-hoc out-of-band deploys (skip the Hostinger build queue):
 
 ```bash
 npm run build
-# Upload contents of out/ to public_html on the FTP host.
+python3 /tmp/siffat-ftp-deploy.py   # env: FTP_HOST / FTP_USER / FTP_PASS / FTP_LOCAL / FTP_REMOTE
 ```
-
-The site is **fully static** — no Node, no PHP, no database. Once `out/` is on the server, it's live.
 
 ---
 
@@ -250,12 +248,13 @@ The site is **fully static** — no Node, no PHP, no database. Once `out/` is on
 
 | Role | Name |
 |---|---|
-| Subject | [Siffat Gandhi](https://instagram.com/siffat.gandhi) |
+| Subject | [Siffaat Gandhi](https://instagram.com/siffat.gandhi) |
 | Photography | Various |
 | Design reference | i-D Magazine *Spotlight* series |
 | Type | Archivo Black · EB Garamond · Inter |
 | Place | Mumbai |
 | Year | MMXXVI |
+| Built with ♥ by | 𝜋 |
 
 ---
 
