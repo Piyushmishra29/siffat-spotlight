@@ -135,8 +135,18 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
+          href="/photos/sized/pink-ck-720.jpg"
+          media="(max-width: 768px)"
+          imageSrcSet="/photos/sized/pink-ck-720.jpg 720w, /photos/sized/pink-ck-1280.jpg 1280w"
+          imageSizes="100vw"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          as="image"
           href="/photos/sized/red-door-1280.jpg"
-          imageSrcSet="/photos/sized/red-door-720.jpg 720w, /photos/sized/red-door-1280.jpg 1280w, /photos/sized/red-door-1920.jpg 1920w"
+          media="(min-width: 769px)"
+          imageSrcSet="/photos/sized/red-door-1280.jpg 1280w, /photos/sized/red-door-1920.jpg 1920w"
           imageSizes="100vw"
           fetchPriority="high"
         />

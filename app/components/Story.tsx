@@ -14,7 +14,6 @@ export default function Story() {
       alt="Siffaat Gandhi — red door portrait, lehenga and leather, Mumbai"
       caption="RED DOOR · MUMBAI"
       side="right"
-      heightVh={240}
       className="bg-paper"
     >
       <ChapterEyebrow n="01" label="STORY" />

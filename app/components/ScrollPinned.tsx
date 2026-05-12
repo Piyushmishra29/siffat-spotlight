@@ -11,7 +11,9 @@ type Props = {
   position?: string;
   /** Side the sticky photo sits on (desktop). Mobile always stacks text-first. */
   side?: "left" | "right";
-  /** Section min height. Bigger = more sticky dwell. Default 220vh. */
+  /** Optional section min-height in vh. Omit to let content determine
+   *  height — the sticky photo dwells across the text-column scroll
+   *  naturally. Pass a value only when you want extra dwell after text. */
   heightVh?: number;
   className?: string;
   id?: string;
@@ -29,7 +31,7 @@ export default function ScrollPinned({
   caption,
   position = "center",
   side = "right",
-  heightVh = 220,
+  heightVh,
   className = "",
   id,
   children,
@@ -78,7 +80,7 @@ export default function ScrollPinned({
       ref={ref}
       id={id}
       className={"relative " + className}
-      style={{ minHeight: `${heightVh}vh` }}
+      style={heightVh ? { minHeight: `${heightVh}vh` } : undefined}
     >
       <div className="mx-auto max-w-[1400px] px-6 md:pl-[180px] md:pr-12 py-16 md:py-24">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-12 md:gap-12">
