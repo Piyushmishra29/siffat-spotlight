@@ -174,12 +174,12 @@ body {
    slides up from below. One-shot, runs on first paint only. */
 .splash-square {
   transform: scale(0);
-  animation: splash-square-in 320ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  animation: splash-square-in 560ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
   transform-origin: center;
 }
 .splash-band-inner {
   transform: translateY(100%);
-  animation: splash-band-in 380ms cubic-bezier(0.2, 0.7, 0.2, 1) 220ms forwards;
+  animation: splash-band-in 580ms cubic-bezier(0.2, 0.7, 0.2, 1) 420ms forwards;
 }
 @keyframes splash-square-in {
   to { transform: scale(1); }
