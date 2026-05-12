@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useScrollProgress } from "@/lib/useScrollProgress";
 
 export default function Hero() {
@@ -26,16 +25,29 @@ export default function Hero() {
           willChange: "transform",
         }}
       >
-        <Image
-          src="/photos/red-door.jpg"
-          alt="Siffaat Gandhi — actor portfolio cover, red door portrait, Mumbai"
-          fill
-          priority
-          quality={90}
-          sizes="100vw"
-          className="object-cover"
-          style={{ objectPosition: "center 25%" }}
-        />
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet="/photos/sized/red-door-720.jpg"
+          />
+          <source
+            media="(max-width: 1280px)"
+            srcSet="/photos/sized/red-door-1280.jpg"
+          />
+          <source
+            media="(max-width: 1920px)"
+            srcSet="/photos/sized/red-door-1920.jpg"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/photos/sized/red-door-1920.jpg"
+            alt="Siffaat Gandhi — actor portfolio cover, red door portrait, Mumbai"
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: "center 25%" }}
+          />
+        </picture>
       </div>
 
       <div
