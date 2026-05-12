@@ -4,7 +4,7 @@ import PinkBlockQuote from "./components/PinkBlockQuote";
 import Story from "./components/Story";
 import PhotoTrio from "./components/PhotoTrio";
 import OnScreen from "./components/OnScreen";
-import PhotoPyramid from "./components/PhotoPyramid";
+import PhotoHeart from "./components/PhotoHeart";
 import MusicVideos from "./components/MusicVideos";
 import OliveSection from "./components/OliveSection";
 import BrandWork from "./components/BrandWork";
@@ -70,11 +70,7 @@ export default function Home() {
 
       <OnScreen />
 
-      <PhotoPyramid
-        src="/photos/bindi.jpg"
-        alt="Siffaat — bindi portrait, repeated"
-        caption="ONE FRAME. EIGHTY-FIVE TAKES."
-      />
+      <PhotoHeart caption="ONE FRAME. EIGHTY-FIVE TAKES." />
 
       <MusicVideos />
 
