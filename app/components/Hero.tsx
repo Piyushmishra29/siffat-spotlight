@@ -83,10 +83,9 @@ export default function Hero() {
       />
 
       <h1
-        className="absolute right-0 z-10 font-display uppercase text-pink leading-[0.86] tracking-tight2 hero-title-shadow"
+        className="absolute right-0 z-10 font-display uppercase text-pink leading-[0.86] tracking-tight2 hero-title-shadow hero-title-pos"
         style={{
           fontSize: "clamp(3.25rem, 11vw, 9.5rem)",
-          top: "clamp(110px, 16vh, 200px)",
           paddingRight: "clamp(0.75rem, 2vw, 2rem)",
           textAlign: "right",
           transform: `translate3d(0, ${titleY}px, 0)`,
