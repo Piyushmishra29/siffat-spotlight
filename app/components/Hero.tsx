@@ -39,7 +39,7 @@ export default function Hero() {
       </div>
 
       <div
-        className="absolute left-4 right-4 z-10 md:left-[170px] md:right-auto md:top-6"
+        className="absolute left-[68px] right-4 z-10 md:left-[170px] md:right-auto md:top-6"
         style={{ top: 18 }}
       >
         <p className="font-inter text-[10px] md:text-[11px] uppercase tracking-widest text-paper/95 leading-[1.55] drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]">
@@ -57,8 +57,8 @@ export default function Hero() {
       <h1
         className="absolute right-0 z-10 font-display uppercase text-pink leading-[0.86] tracking-tight2 text-stroke-hero"
         style={{
-          fontSize: "clamp(2.75rem, 9.5vw, 9.5rem)",
-          top: "clamp(100px, 16vh, 200px)",
+          fontSize: "clamp(3.25rem, 11vw, 9.5rem)",
+          top: "clamp(110px, 16vh, 200px)",
           paddingRight: "clamp(0.75rem, 2vw, 2rem)",
           textAlign: "right",
           transform: `translate3d(0, ${titleY}px, 0)`,
