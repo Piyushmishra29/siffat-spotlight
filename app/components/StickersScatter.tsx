@@ -94,7 +94,7 @@ export default function StickersScatter() {
         <div className="relative mt-10 h-[340px] md:hidden">
           <Drift progress={progress} multiplier={20}>
             <Polaroid
-              src="/photos/bindi.jpg"
+              src="/photos/sized/bindi-720.jpg"
               alt="Siffaat Gandhi — bindi portrait, between takes"
               className="right-2 top-6 z-[1]"
               style={{ width: 160, transform: "rotate(6deg)" }}
@@ -132,7 +132,7 @@ export default function StickersScatter() {
         <div className="hidden md:block">
           <Drift progress={progress} multiplier={20}>
             <Polaroid
-              src="/photos/bindi.jpg"
+              src="/photos/sized/bindi-720.jpg"
               alt="Siffaat Gandhi — bindi portrait, between takes"
               className="top-12 right-[20%] z-[1]"
               style={{ width: 240, transform: "rotate(6deg)" }}
