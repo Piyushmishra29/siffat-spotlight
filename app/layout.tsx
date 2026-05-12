@@ -34,7 +34,7 @@ const display = Archivo_Black({
 const SITE_URL = "https://siffaatgandhi.online";
 const TITLE = "Siffaat Gandhi — Actor · Mumbai · One Look. Every Role.";
 const DESCRIPTION =
-  "Siffaat Gandhi is a Mumbai-based actor with a portfolio spanning Hindi web series, TVCs, music videos, and short films. Trained under Saurabh Sachdeva at Antar Angan. View reel, brand work, and self-tapes.";
+  "Siffaat Gandhi is a Mumbai-based actor with a portfolio spanning Hindi web series, TVCs, music videos, and short films. Trained under Saurabh Sachdeva at Anterang. View reel, brand work, and self-tapes.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     "TVC actor",
     "Indian actress",
     "Saurabh Sachdeva",
-    "Antar Angan",
+    "Anterang",
     "self-tape",
     "audition reel",
     "music video actress",
