@@ -27,13 +27,14 @@ export default function Hero() {
         }}
       >
         <Image
-          src="/photos/cover-suit.jpg"
+          src="/photos/pink-ck.jpg"
           alt="Siffaat Gandhi — Spotlight cover"
           fill
           priority
+          quality={90}
           sizes="100vw"
           className="object-cover"
-          style={{ objectPosition: "center top" }}
+          style={{ objectPosition: "center 20%" }}
         />
       </div>
 
