@@ -5,15 +5,65 @@ import { useScrollProgress } from "@/lib/useScrollProgress";
 import { staggerRise } from "@/lib/motion";
 import ChapterEyebrow from "./ChapterEyebrow";
 
-const GALLERY: { src: string; alt: string }[] = [
-  { src: "/photos/red-door.jpg", alt: "Red door — lehenga and leather" },
-  { src: "/photos/bindi.jpg", alt: "Close-up portrait" },
-  { src: "/photos/red-brick.jpg", alt: "Red brick — ethnic white-gold" },
-  { src: "/photos/pink-ck.jpg", alt: "Pink lit — Calvin Klein" },
-  { src: "/photos/rose.jpg", alt: "Rose — portrait" },
-  { src: "/photos/gold-crop.jpg", alt: "Gold crop — editorial" },
-  { src: "/photos/sky-bangles.jpg", alt: "Sunset bangles" },
-  { src: "/photos/vogue.jpg", alt: "Vogue magazine portrait" },
+type Tile = {
+  src: string;
+  alt: string;
+  span: string;
+  aspect: string;
+  position?: string;
+};
+
+const GALLERY: Tile[] = [
+  {
+    src: "/photos/red-door.jpg",
+    alt: "Red door — lehenga and leather",
+    span: "md:col-span-7",
+    aspect: "aspect-[3/4]",
+  },
+  {
+    src: "/photos/bindi.jpg",
+    alt: "Close-up portrait — bindi",
+    span: "md:col-span-5",
+    aspect: "aspect-[4/5]",
+    position: "center 25%",
+  },
+  {
+    src: "/photos/red-brick.jpg",
+    alt: "Red brick — ethnic white-gold",
+    span: "md:col-span-5",
+    aspect: "aspect-[3/4]",
+  },
+  {
+    src: "/photos/pink-ck.jpg",
+    alt: "Pink lit — Calvin Klein",
+    span: "md:col-span-7",
+    aspect: "aspect-[4/3]",
+    position: "center 30%",
+  },
+  {
+    src: "/photos/rose.jpg",
+    alt: "Rose — portrait",
+    span: "md:col-span-6",
+    aspect: "aspect-[1/1]",
+  },
+  {
+    src: "/photos/gold-crop.jpg",
+    alt: "Gold crop — editorial",
+    span: "md:col-span-6",
+    aspect: "aspect-[3/4]",
+  },
+  {
+    src: "/photos/sky-bangles.jpg",
+    alt: "Sunset bangles",
+    span: "md:col-span-8",
+    aspect: "aspect-[16/9]",
+  },
+  {
+    src: "/photos/vogue.jpg",
+    alt: "Vogue portrait",
+    span: "md:col-span-4",
+    aspect: "aspect-[3/4]",
+  },
 ];
 
 export default function Gallery() {
@@ -41,30 +91,30 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="mt-12 columns-1 gap-3 md:columns-2 md:gap-5">
+        <div className="mt-12 grid grid-cols-1 gap-3 md:grid-cols-12 md:gap-5">
           {GALLERY.map((g, i) => {
             const motion = staggerRise(progress, 0.05 + i * 0.05);
-            const drift = (progress - 0.5) * (i % 2 === 0 ? 14 : -14);
+            const drift = (progress - 0.5) * (i % 2 === 0 ? 18 : -18);
             return (
               <figure
                 key={g.src}
-                className="mb-3 break-inside-avoid md:mb-5 overflow-hidden"
+                className={`group/tile relative overflow-hidden bg-ink ${g.span} ${g.aspect}`}
                 style={{ ...motion, willChange: "transform, opacity" }}
               >
                 <div
-                  className="relative w-full overflow-hidden"
+                  className="absolute inset-0"
                   style={{
-                    transform: `translate3d(0, ${drift}px, 0)`,
+                    transform: `translate3d(0, ${drift}px, 0) scale(1.06)`,
                     willChange: "transform",
                   }}
                 >
                   <Image
                     src={g.src}
                     alt={g.alt}
-                    width={1200}
-                    height={1600}
+                    fill
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="block h-auto w-full object-cover"
+                    className="object-cover transition-transform duration-500 group-hover/tile:scale-[1.02]"
+                    style={{ objectPosition: g.position ?? "center" }}
                   />
                 </div>
               </figure>

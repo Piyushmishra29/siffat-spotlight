@@ -56,20 +56,41 @@ export default function BrandWork() {
           <div className="border-b hairline" />
         </div>
 
-        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
-          {brandStills.map((s, i) => {
+        <div className="mt-12 grid grid-cols-1 gap-3 md:grid-cols-12 md:gap-4">
+          {brandStills.slice(0, 1).map((s, i) => {
             const motion = staggerRise(progress, 0.2 + i * 0.06);
             return (
               <figure
                 key={s.file}
-                className="group/tile relative aspect-[3/4] overflow-hidden bg-ink"
+                className="group/tile relative aspect-[3/4] overflow-hidden bg-ink md:col-span-7 md:row-span-3"
                 style={{ ...motion, willChange: "transform, opacity" }}
               >
                 <Image
                   src={s.file}
                   alt={s.caption}
                   fill
-                  sizes="(min-width: 768px) 25vw, 50vw"
+                  sizes="(min-width: 768px) 58vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover/tile:scale-[1.04]"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 bg-ink/85 px-3 py-2 font-inter text-[9px] uppercase tracking-widest text-paper">
+                  {s.caption}
+                </figcaption>
+              </figure>
+            );
+          })}
+          {brandStills.slice(1).map((s, i) => {
+            const motion = staggerRise(progress, 0.28 + i * 0.06);
+            return (
+              <figure
+                key={s.file}
+                className="group/tile relative aspect-[4/3] overflow-hidden bg-ink md:col-span-5"
+                style={{ ...motion, willChange: "transform, opacity" }}
+              >
+                <Image
+                  src={s.file}
+                  alt={s.caption}
+                  fill
+                  sizes="(min-width: 768px) 42vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover/tile:scale-[1.04]"
                 />
                 <figcaption className="absolute inset-x-0 bottom-0 bg-ink/85 px-3 py-2 font-inter text-[9px] uppercase tracking-widest text-paper">
