@@ -37,6 +37,7 @@ export default function AuditionReels() {
                 href={r.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-cursor-label="Play"
                 className="group block"
                 style={{ ...motion, willChange: "transform, opacity" }}
               >

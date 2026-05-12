@@ -6,6 +6,7 @@ import PhotoTrio from "./components/PhotoTrio";
 import OnScreen from "./components/OnScreen";
 import PhotoHeart from "./components/PhotoHeart";
 import PinnedImage from "./components/PinnedImage";
+import Marquee from "./components/Marquee";
 import MusicVideos from "./components/MusicVideos";
 import OliveSection from "./components/OliveSection";
 import BrandWork from "./components/BrandWork";
@@ -99,6 +100,20 @@ export default function Home() {
           MMA KEEPS HER SHARP · YOGA KEEPS HER OPEN · BOTH KEEP HER READY.
         </p>
       </OliveSection>
+
+      <Marquee
+        duration={32}
+        items={[
+          <>ON FILM</>,
+          <>ON STAGE</>,
+          <>ON TAPE</>,
+          <>OFF SET</>,
+          <span className="text-pink" key="m1">EVERY ROLE</span>,
+          <>IN FRAME</>,
+          <>NEW FACE</>,
+          <span className="text-pink" key="m2">FULL RANGE</span>,
+        ]}
+      />
 
       <BrandWork />
 

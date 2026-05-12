@@ -77,10 +77,19 @@ export default function AutoplayTape({ ytId, number, thumb, alt }: Props) {
           loading="lazy"
           allow="autoplay; encrypted-media; picture-in-picture"
           referrerPolicy="strict-origin-when-cross-origin"
-          // 16:9 video upscaled so the YouTube black bars never show on a
-          // tile that may be slightly off-ratio.
-          className="pointer-events-none absolute left-1/2 top-1/2 h-[120%] w-[178%] -translate-x-1/2 -translate-y-1/2"
+          // Scaled aggressively so the YouTube watermark, modestbranding
+          // link, and any chrome live outside the visible aspect-video frame.
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[260%] w-[260%] -translate-x-1/2 -translate-y-1/2"
           style={{ border: 0 }}
+        />
+      )}
+
+      {/* Belt-and-braces mask for the bottom-right area in case YT chrome
+          still leaks past the oversized iframe — same ink as the tile bg. */}
+      {inView && (
+        <span
+          aria-hidden
+          className="pointer-events-none absolute right-0 bottom-0 w-[26%] h-[18%] bg-ink"
         />
       )}
 
