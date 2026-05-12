@@ -20,7 +20,7 @@ export default function Hero() {
       className="relative min-h-[100svh] w-full overflow-hidden bg-paper text-ink"
     >
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 editorial-treatment"
         style={{
           transform: `translate3d(0, ${imgY}%, 0) scale(${imgScale})`,
           willChange: "transform",

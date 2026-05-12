@@ -62,7 +62,7 @@ export default function BrandWork() {
             return (
               <figure
                 key={s.file}
-                className="group/tile relative aspect-[3/4] overflow-hidden bg-ink md:col-span-7 md:row-span-3"
+                className="group/tile relative aspect-[3/4] overflow-hidden bg-ink md:col-span-7 md:row-span-3 editorial-treatment"
                 style={{ ...motion, willChange: "transform, opacity" }}
               >
                 <Image

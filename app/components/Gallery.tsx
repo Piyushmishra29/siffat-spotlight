@@ -98,7 +98,7 @@ export default function Gallery() {
             return (
               <figure
                 key={g.src}
-                className={`group/tile relative overflow-hidden bg-ink ${g.span} ${g.aspect}`}
+                className={`group/tile relative overflow-hidden bg-ink editorial-treatment ${g.span} ${g.aspect}`}
                 style={{ ...motion, willChange: "transform, opacity" }}
               >
                 <div
