@@ -46,6 +46,7 @@ export type ShortFilm = {
   title: string;
   credit: string;
   logline: string | null;
+  url?: string;
 };
 
 export type MusicVideo = {
@@ -177,26 +178,27 @@ export const brands: Brand[] = [
   { name: "VIVO Diwali", url: "https://youtu.be/nBV3w12Lx4A" },
 ];
 
-// Top-row wordmark display strings (i-D style tracked caps lines)
-export const brandWordmarkLines: string[][] = [
+// Top-row wordmark display + URLs (i-D style tracked caps lines)
+export type BrandWordmark = { name: string; url: string };
+export const brandWordmarkLines: BrandWordmark[][] = [
   [
-    "IND MONEY",
-    "PURE IT",
-    "MORTEIN",
-    "NDTV PROFIT",
-    "PHILIPS",
-    "SIXAM GLOW",
-    "CORNITOS",
-    "REFRESH MATTRESS",
+    { name: "IND MONEY", url: "https://youtu.be/CKfXB8RSrGU" },
+    { name: "PURE IT", url: "https://youtu.be/3QNk5ejimSA" },
+    { name: "MORTEIN", url: "https://www.instagram.com/reel/DAY0wXSuXlR/" },
+    { name: "NDTV PROFIT", url: "https://youtu.be/I4qty0FjzW4" },
+    { name: "PHILIPS", url: "https://www.instagram.com/reel/CofTQRdhxPn/" },
+    { name: "SIXAM GLOW", url: "https://youtu.be/Ek2Zi4SrHp0" },
+    { name: "CORNITOS", url: "https://youtu.be/HKyYmMovDjE" },
+    { name: "REFRESH MATTRESS", url: "https://youtu.be/GUcqs2LF1lY" },
   ],
   [
-    "KFC",
-    "SUPER4",
-    "MAGGI",
-    "JBL",
-    "McCAFFEINE",
-    "FLIPKART",
-    "VIVO DIWALI",
+    { name: "KFC", url: "https://youtu.be/ubC7ObD4lco" },
+    { name: "SUPER4", url: "https://www.instagram.com/tv/CdQCJRFJfqP/" },
+    { name: "MAGGI", url: "https://www.instagram.com/p/CcsNFmBsMrW/" },
+    { name: "JBL", url: "https://www.instagram.com/tv/CVUjZ0woHoq/" },
+    { name: "McCAFFEINE", url: "https://www.instagram.com/p/CTcfua0IK0h/" },
+    { name: "FLIPKART", url: "https://www.instagram.com/reel/CbP2y1sJgPq/" },
+    { name: "VIVO DIWALI", url: "https://youtu.be/nBV3w12Lx4A" },
   ],
 ];
 
