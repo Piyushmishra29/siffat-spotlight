@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, EB_Garamond, Archivo_Black } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "./components/LenisProvider";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -55,6 +56,7 @@ export default function RootLayout({
     >
       <body className="bg-paper text-ink font-garamond">
         <LenisProvider />
+        <ScrollProgressBar />
         {children}
       </body>
     </html>
