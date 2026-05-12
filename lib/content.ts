@@ -178,9 +178,17 @@ export const brands: Brand[] = [
   { name: "VIVO Diwali", url: "https://youtu.be/nBV3w12Lx4A" },
 ];
 
-// Per-brand tile data — name, link, optional locally-hosted poster
-// (used when no YouTube thumbnail is available e.g. Instagram reels).
-export type BrandWordmark = { name: string; url: string; poster?: string };
+// Per-brand tile data. URL optional — entries without URL render as
+// non-clickable archive tiles (campaign stills with no public reel).
+// Poster optional — when absent, YouTube URLs derive their thumbnail
+// from img.youtube.com, and Instagram reels fall back to a typographic
+// swatch tile.
+export type BrandWordmark = {
+  name: string;
+  url?: string;
+  poster?: string;
+  tag?: string;
+};
 export const brandWordmarkLines: BrandWordmark[][] = [
   [
     { name: "IND MONEY", url: "https://youtu.be/CKfXB8RSrGU" },
@@ -191,15 +199,20 @@ export const brandWordmarkLines: BrandWordmark[][] = [
     { name: "SIXAM GLOW", url: "https://youtu.be/Ek2Zi4SrHp0", poster: "/photos/brands/glow-tribe.jpg" },
     { name: "CORNITOS", url: "https://youtu.be/HKyYmMovDjE" },
     { name: "REFRESH MATTRESS", url: "https://youtu.be/GUcqs2LF1lY" },
-  ],
-  [
     { name: "KFC", url: "https://youtu.be/ubC7ObD4lco" },
     { name: "SUPER4", url: "https://www.instagram.com/tv/CdQCJRFJfqP/" },
+  ],
+  [
     { name: "MAGGI", url: "https://www.instagram.com/p/CcsNFmBsMrW/" },
     { name: "JBL", url: "https://www.instagram.com/tv/CVUjZ0woHoq/", poster: "/photos/brands/jbl.jpg" },
     { name: "McCAFFEINE", url: "https://www.instagram.com/p/CTcfua0IK0h/" },
     { name: "FLIPKART", url: "https://www.instagram.com/reel/CbP2y1sJgPq/" },
     { name: "VIVO DIWALI", url: "https://youtu.be/nBV3w12Lx4A" },
+    // Archive stills — campaigns shot, public reel not linked yet.
+    { name: "E3 RISHTA", poster: "/photos/brands/e3group-rishta.jpg", tag: "Campaign" },
+    { name: "JIOMART", poster: "/photos/brands/jiomart.jpg", tag: "Campaign" },
+    { name: "DATE NIGHT", poster: "/photos/brands/date-night.jpg", tag: "Campaign" },
+    { name: "WE'RE HOOKED", poster: "/photos/brands/were-hooked.jpg", tag: "Campaign" },
   ],
 ];
 
