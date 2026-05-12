@@ -102,15 +102,16 @@ export const contact: Contact = {
 export const storyCopy: StoryCopy = {
   headlinePrimary: "FROM LUDHIANA,",
   headlineItalic: "to Bombay.",
-  dek: "Seven years in. A costume stylist who became an actor. A producer of her own stories.",
+  dek: "For me, acting has never just been about performing — it's about feeling things deeply, observing people, understanding emotions, and bringing honesty to every character I play.",
   dropCap: "S",
   bodyParagraphs: [
-    "Siffaat Gandhi grew up in Ludhiana, Punjab, and finished school there before moving to Bombay in 2018 to study. The city met her halfway: first as a costume stylist, then in front of the camera. Television commercials came first — many of them, fast — and small parts in web shows and films followed.",
-    "She trained at THE ACTOR'S TRUTH under Saurabh Sachdeva, and continues theatre with him through ANTAR ANGAN — where the work is slower, harder, and more honest than any set she's been on.",
-    "Recent on-screen credits include the web show VIMAL KHANNA (MX/Amazon) and the series KALAMANCH (KNVR Productions). Beyond performance, she has begun producing her own short films — Love Delivered and Best in the Game — choosing the stories she wants to live inside.",
-    "MMA keeps her sharp. Yoga keeps her open. Both keep her ready.",
+    "Siffaat Gandhi, a 25-year-old actor based in Mumbai, originally from Ludhiana, Punjab.",
+    "I trained at The Actor's Truth under Saurabh Sachdeva, where I truly began understanding the craft beyond just the camera. Since then, I've worked across web series, music videos, TV commercials, and digital campaigns with some incredible brands and artists.",
+    "Over the years, I've been part of projects with brands like KFC, JBL, Philips, Flipkart, VIVO, McCaffeine, Maggi, Pureit, IND Money and many more. I've also featured in music videos including Yaar Ka Sataya Hua alongside Nawazuddin Siddiqui and Sun Toh Na.",
+    "Apart from acting, I'm trained in dance, MMA, and yoga — all of which help me stay connected to my body, discipline, and expression as an artist.",
+    "I believe I bring a certain emotional honesty to the screen. Whether it's vulnerability, intensity, softness, confidence, or chaos — I enjoy exploring every shade of human emotion through my work.",
   ],
-  signature: "— Siffaat",
+  signature: "At the heart of it all, I'm just someone chasing stories, moments, and characters that leave people feeling something real.",
 };
 
 export const webSeries: WebSeries[] = [
