@@ -20,6 +20,14 @@ const config: Config = {
         cyan: "#9BE8E8",
         // legacy alias so anything missed still has a defined value
         oxblood: "#FF2D9B",
+        // v2 brutalist palette
+        v2bg: "#0A0A0B",
+        v2fg: "#FAFAFA",
+        v2ink: "#18181B",
+        v2muted: "#3F3F46",
+        v2border: "#27272A",
+        v2acid: "#DFE104",
+        v2blue: "#2563EB",
       },
       fontFamily: {
         display: ["var(--font-display)", "Impact", "Arial Black", "sans-serif"],
