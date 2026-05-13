@@ -20,6 +20,12 @@ const config: Config = {
         cyan: "#9BE8E8",
         // legacy alias so anything missed still has a defined value
         oxblood: "#FF2D9B",
+        // v5 couture palette — pure monochrome
+        v5bg: "#FFFFFF",
+        v5ink: "#0A0A0A",
+        v5mute: "#5C5C5C",
+        v5line: "#D7D7D7",
+        v5wash: "#F5F5F5",
       },
       fontFamily: {
         display: ["var(--font-display)", "Impact", "Arial Black", "sans-serif"],
