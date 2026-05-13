@@ -64,6 +64,34 @@ const GALLERY: Tile[] = [
     span: "md:col-span-4",
     aspect: "aspect-[3/4]",
   },
+  {
+    src: "/photos/sized/red-bike-front-1280.jpg",
+    alt: "Siffaat Gandhi — red lehenga at a motorcycle, Mumbai brick wall",
+    span: "md:col-span-7",
+    aspect: "aspect-[1/1]",
+    position: "center 30%",
+  },
+  {
+    src: "/photos/sized/leopard-hills-1280.jpg",
+    alt: "Siffaat Gandhi — leopard print scarf, hill resort balcony, daylight",
+    span: "md:col-span-5",
+    aspect: "aspect-[3/4]",
+    position: "center 25%",
+  },
+  {
+    src: "/photos/sized/floral-saree-1280.jpg",
+    alt: "Siffaat Gandhi — sheer floral saree, soft daylight, smile",
+    span: "md:col-span-5",
+    aspect: "aspect-[3/4]",
+    position: "center 20%",
+  },
+  {
+    src: "/photos/sized/sheer-floral-1280.jpg",
+    alt: "Siffaat Gandhi — sheer black-print blouse, candid daylight portrait",
+    span: "md:col-span-7",
+    aspect: "aspect-[4/3]",
+    position: "center 20%",
+  },
 ];
 
 export default function Gallery() {

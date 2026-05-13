@@ -25,6 +25,25 @@ const PHOTOS = [
   "/photos/films/bards-of-bollywood.jpg",
   "/photos/films/jawan.jpg",
   "/photos/films/kalamanch.jpg",
+  "/photos/sized/red-portrait-720.jpg",
+  "/photos/sized/red-bike-front-720.jpg",
+  "/photos/sized/red-bike-side-720.jpg",
+  "/photos/sized/floral-smile-720.jpg",
+  "/photos/sized/floral-saree-720.jpg",
+  "/photos/sized/cream-sweater-720.jpg",
+  "/photos/sized/yellow-sweater-720.jpg",
+  "/photos/sized/orange-spotlight-720.jpg",
+  "/photos/sized/smile-close-720.jpg",
+  "/photos/sized/vogue-front-720.jpg",
+  "/photos/sized/vogue-side-720.jpg",
+  "/photos/sized/rose-phone-720.jpg",
+  "/photos/sized/sundown-fabric-720.jpg",
+  "/photos/sized/sundown-joy-720.jpg",
+  "/photos/sized/sundown-shore-720.jpg",
+  "/photos/sized/sundown-glance-720.jpg",
+  "/photos/sized/sheer-floral-720.jpg",
+  "/photos/sized/leopard-hills-720.jpg",
+  "/photos/sized/zouk-bag-720.jpg",
 ];
 
 const HEART_LG: number[][] = [
@@ -66,29 +85,71 @@ type Tile = {
   photo: string;
 };
 
-function buildTiles(heart: number[][]): Tile[] {
-  const list: Tile[] = [];
-  let i = 0;
+// 2D adjacency-aware placement. For each cell, block any photo already
+// placed at the immediate 4 neighbors (left, above, above-left, above-right).
+// Among photos that aren't blocked, pick the LEAST-used one (random
+// tiebreaker via seeded RNG) — this keeps the 2× distribution balanced
+// instead of using one photo 4× and another 1× by accident.
+function buildTiles(heart: number[][], saltSeed: number): Tile[] {
+  const cells: Array<{ row: number; col: number }> = [];
   heart.forEach((row, rIdx) => {
     row.forEach((cell, cIdx) => {
-      if (!cell) return;
-      list.push({
-        row: rIdx,
-        col: cIdx,
-        sx: (seeded(i * 7 + 1) * 2 - 1) * 55,
-        sy: (seeded(i * 7 + 2) * 2 - 1) * 40,
-        sr: (seeded(i * 7 + 3) * 2 - 1) * 100,
-        delay: seeded(i * 7 + 4) * 0.16,
-        photo: PHOTOS[i % PHOTOS.length],
-      });
-      i++;
+      if (cell) cells.push({ row: rIdx, col: cIdx });
     });
   });
-  return list;
+
+  const placedAt: Record<string, string> = {};
+  const counts = new Map<string, number>();
+  PHOTOS.forEach((p) => counts.set(p, 0));
+  const placed: string[] = [];
+
+  for (let i = 0; i < cells.length; i++) {
+    const { row, col } = cells[i];
+    const blocked = new Set<string>();
+    const left = placedAt[`${row},${col - 1}`];
+    const above = placedAt[`${row - 1},${col}`];
+    const aboveLeft = placedAt[`${row - 1},${col - 1}`];
+    const aboveRight = placedAt[`${row - 1},${col + 1}`];
+    [left, above, aboveLeft, aboveRight].forEach((p) => {
+      if (p) blocked.add(p);
+    });
+
+    let minCount = Infinity;
+    let candidates: string[] = [];
+    for (const p of PHOTOS) {
+      if (blocked.has(p)) continue;
+      const c = counts.get(p) ?? 0;
+      if (c < minCount) {
+        minCount = c;
+        candidates = [p];
+      } else if (c === minCount) {
+        candidates.push(p);
+      }
+    }
+    if (candidates.length === 0) {
+      // Pool exhausted (impossible if PHOTOS.length > 4 but guard anyway).
+      candidates = PHOTOS.slice();
+    }
+    const pick =
+      candidates[Math.floor(seeded(saltSeed + i * 31 + 7) * candidates.length)];
+    placedAt[`${row},${col}`] = pick;
+    counts.set(pick, (counts.get(pick) ?? 0) + 1);
+    placed.push(pick);
+  }
+
+  return cells.map((c, i) => ({
+    row: c.row,
+    col: c.col,
+    sx: (seeded(i * 7 + 1) * 2 - 1) * 55,
+    sy: (seeded(i * 7 + 2) * 2 - 1) * 40,
+    sr: (seeded(i * 7 + 3) * 2 - 1) * 100,
+    delay: seeded(i * 7 + 4) * 0.16,
+    photo: placed[i],
+  }));
 }
 
-const TILES_LG = buildTiles(HEART_LG);
-const TILES_SM = buildTiles(HEART_SM);
+const TILES_LG = buildTiles(HEART_LG, 1013);
+const TILES_SM = buildTiles(HEART_SM, 2027);
 
 const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 

@@ -2,6 +2,8 @@ import SGBlock from "./components/SGBlock";
 import Hero from "./components/Hero";
 import PinkBlockQuote from "./components/PinkBlockQuote";
 import Story from "./components/Story";
+import Sundown from "./components/Sundown";
+import Interstitial from "./components/Interstitial";
 import PhotoTrio from "./components/PhotoTrio";
 import OnScreen from "./components/OnScreen";
 import PhotoHeart from "./components/PhotoHeart";
@@ -37,6 +39,8 @@ export default function Home() {
       </PinkBlockQuote>
 
       <Story />
+
+      <Sundown />
 
       <PhotoTrio
         tiles={[
@@ -112,14 +116,21 @@ export default function Home() {
         ]}
       />
 
+      <Interstitial
+        src="/photos/sized/bangles-band-1920.jpg"
+        alt="Siffaat Gandhi — composite editorial, monochrome portrait framed by saturated bangles"
+        caption="INTERLUDE · BETWEEN COLOURS"
+        position="center"
+      />
+
       <BrandWork />
 
       <ShortFilms />
 
       <PinnedImage
-        src="/photos/sized/glass-lean-1280.jpg"
-        alt="Siffaat Gandhi — off-set portrait, between takes"
-        caption="OFF SET · BETWEEN TAKES."
+        src="/photos/sized/rose-phone-1280.jpg"
+        alt="Siffaat Gandhi — off-set vignette, rose and rotary phone, vintage palette"
+        caption="OFF SET · A CALL FROM SOMEONE."
         position="center 35%"
       />
 
