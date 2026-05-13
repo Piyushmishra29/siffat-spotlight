@@ -20,6 +20,16 @@ const config: Config = {
         cyan: "#9BE8E8",
         // legacy alias so anything missed still has a defined value
         oxblood: "#FF2D9B",
+        // v3 cinema palette — modern dark OTT
+        v3deep: "#020203",
+        v3base: "#050506",
+        v3elev: "#0A0A0C",
+        v3surf: "rgba(255,255,255,0.05)",
+        v3fg: "#EDEDEF",
+        v3mute: "#8A8F98",
+        v3accent: "#5E6AD2",
+        v3glow: "rgba(94,106,210,0.25)",
+        v3border: "rgba(255,255,255,0.08)",
       },
       fontFamily: {
         display: ["var(--font-display)", "Impact", "Arial Black", "sans-serif"],
