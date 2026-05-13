@@ -20,6 +20,15 @@ const config: Config = {
         cyan: "#9BE8E8",
         // legacy alias so anything missed still has a defined value
         oxblood: "#FF2D9B",
+        // v4 vintage analog palette — faded film stock
+        v4paper: "#F5E6C8",
+        v4cream: "#EFDFC0",
+        v4sepia: "#D4A574",
+        v4ink: "#2E2419",
+        v4mute: "#6B5A48",
+        v4teal: "#4A7B7C",
+        v4rose: "#E8B4B8",
+        v4leak: "rgba(255,200,100,0.18)",
       },
       fontFamily: {
         display: ["var(--font-display)", "Impact", "Arial Black", "sans-serif"],
