@@ -20,6 +20,13 @@ const config: Config = {
         cyan: "#9BE8E8",
         // legacy alias so anything missed still has a defined value
         oxblood: "#FF2D9B",
+        // v6 exaggerated minimalism — white ground + one vivid accent
+        v6bg: "#FFFFFF",
+        v6ink: "#111111",
+        v6mute: "#666666",
+        v6line: "#E2E2E2",
+        v6pop: "#FF4D00",
+        v6popDim: "#FFE9DD",
       },
       fontFamily: {
         display: ["var(--font-display)", "Impact", "Arial Black", "sans-serif"],
