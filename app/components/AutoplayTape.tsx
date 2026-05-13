@@ -7,6 +7,7 @@ type Props = {
   number: string;
   thumb: string;
   alt: string;
+  thumbPosition?: string;
 };
 
 /**
@@ -19,7 +20,7 @@ type Props = {
  * (YouTube's player background is opaque black, which covers the thumb
  * until the first frame decodes — fading the iframe in masks that).
  */
-export default function AutoplayTape({ ytId, number, thumb, alt }: Props) {
+export default function AutoplayTape({ ytId, number, thumb, alt, thumbPosition }: Props) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [inView, setInView] = useState(false);
   const [iframeReady, setIframeReady] = useState(false);
@@ -75,6 +76,7 @@ export default function AutoplayTape({ ytId, number, thumb, alt }: Props) {
         }}
         loading="lazy"
         className="absolute inset-0 h-full w-full object-cover opacity-95 transition-opacity duration-500 group-hover/tape:opacity-100"
+        style={thumbPosition ? { objectPosition: thumbPosition } : undefined}
       />
 
       {/* Bottom-right mask: hides the YT watermark if it ever leaks. */}

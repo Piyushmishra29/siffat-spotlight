@@ -69,6 +69,9 @@ export type AuditionReel = {
   url: string;
   label: string;
   ytId: string;
+  poster?: string;
+  posterAlt?: string;
+  posterPosition?: string;
 };
 
 export const bio: Bio = {
@@ -231,36 +234,54 @@ export const auditionReels: AuditionReel[] = [
     url: "https://youtu.be/w9h9y2KO6nI",
     label: "Self-tape · Mumbai",
     ytId: "w9h9y2KO6nI",
+    poster: "/photos/sized/cream-sweater-1280.jpg",
+    posterAlt: "Siffaat Gandhi — chamber portrait, cream knit, red curtain",
+    posterPosition: "center 18%",
   },
   {
     id: "02",
     url: "https://youtu.be/A3CqO5h0VC8",
     label: "Self-tape · Mumbai",
     ytId: "A3CqO5h0VC8",
+    poster: "/photos/sized/yellow-sweater-1280.jpg",
+    posterAlt: "Siffaat Gandhi — dramatic stage light, yellow knit, deep red room",
+    posterPosition: "center 25%",
   },
   {
     id: "03",
     url: "https://youtu.be/4d2XPyANI_w",
     label: "Self-tape · Mumbai",
     ytId: "4d2XPyANI_w",
+    poster: "/photos/sized/orange-spotlight-1280.jpg",
+    posterAlt: "Siffaat Gandhi — orange spotlight portrait, shadow on wall",
+    posterPosition: "center 30%",
   },
   {
     id: "04",
     url: "https://youtu.be/yvjh7cFBg2I",
     label: "Self-tape · Mumbai",
     ytId: "yvjh7cFBg2I",
+    poster: "/photos/sized/smile-close-1280.jpg",
+    posterAlt: "Siffaat Gandhi — warm close-up, joy",
+    posterPosition: "center 20%",
   },
   {
     id: "05",
     url: "https://youtu.be/ug79QZwhD44",
     label: "Self-tape · Mumbai",
     ytId: "ug79QZwhD44",
+    poster: "/photos/sized/vogue-side-1280.jpg",
+    posterAlt: "Siffaat Gandhi — editorial side profile, black blazer, studio shadow",
+    posterPosition: "center 18%",
   },
   {
     id: "06",
     url: "https://youtu.be/hCo24KnA6r4",
     label: "Self-tape · Mumbai",
     ytId: "hCo24KnA6r4",
+    poster: "/photos/sized/vogue-front-1280.jpg",
+    posterAlt: "Siffaat Gandhi — composed front portrait, black blazer, studio light",
+    posterPosition: "center 18%",
   },
 ];
 

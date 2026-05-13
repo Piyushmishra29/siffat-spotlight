@@ -44,8 +44,11 @@ export default function AuditionReels() {
                 <AutoplayTape
                   ytId={r.ytId}
                   number={`Nº ${r.id}`}
-                  thumb={`https://img.youtube.com/vi/${r.ytId}/maxresdefault.jpg`}
-                  alt={`Siffaat Gandhi — self-tape Nº ${r.id} · Mumbai`}
+                  thumb={
+                    r.poster ?? `https://img.youtube.com/vi/${r.ytId}/maxresdefault.jpg`
+                  }
+                  thumbPosition={r.posterPosition}
+                  alt={r.posterAlt ?? `Siffaat Gandhi — self-tape Nº ${r.id} · Mumbai`}
                 />
                 <p className="mt-2 font-inter text-[10px] uppercase tracking-widest text-warmGrey">
                   Self-tape · Mumbai · 2024–2026
