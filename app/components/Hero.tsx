@@ -26,16 +26,16 @@ export default function Hero() {
         }}
       >
         <picture>
-          {/* Mobile uses pink-ck.jpg — tall portrait (5344x9504) fits the
-              mobile aspect ratio much better than red-door, which gets
-              cropped awkwardly at narrow viewports. */}
+          {/* Mobile uses red-portrait — moody head-and-shoulders frame
+              fills narrow viewports without cropping the face, and the
+              dark base gives the pink title strong contrast. */}
           <source
             media="(max-width: 768px) and (max-resolution: 1.5dppx)"
-            srcSet="/photos/sized/pink-ck-720.jpg"
+            srcSet="/photos/sized/red-portrait-720.jpg"
           />
           <source
             media="(max-width: 768px)"
-            srcSet="/photos/sized/pink-ck-1280.jpg"
+            srcSet="/photos/sized/red-portrait-1280.jpg"
           />
           <source
             media="(max-width: 1280px)"

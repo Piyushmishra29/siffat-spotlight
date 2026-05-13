@@ -135,9 +135,9 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/photos/sized/pink-ck-720.jpg"
+          href="/photos/sized/red-portrait-720.jpg"
           media="(max-width: 768px)"
-          imageSrcSet="/photos/sized/pink-ck-720.jpg 720w, /photos/sized/pink-ck-1280.jpg 1280w"
+          imageSrcSet="/photos/sized/red-portrait-720.jpg 720w, /photos/sized/red-portrait-1280.jpg 1280w"
           imageSizes="100vw"
           fetchPriority="high"
         />
