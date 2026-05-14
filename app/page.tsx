@@ -95,7 +95,7 @@ export default function Home() {
         >
           And theatre with him through{" "}
           <span className="text-pink not-italic font-display uppercase tracking-tight2">
-            ANTERANG
+            ANTRANG
           </span>{" "}
           — where the work is slower, harder, and more honest than any set
           she&rsquo;s been on.
