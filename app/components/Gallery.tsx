@@ -72,13 +72,6 @@ const GALLERY: Tile[] = [
     position: "center 30%",
   },
   {
-    src: "/photos/sized/leopard-hills-1280.jpg",
-    alt: "Siffaat Gandhi — leopard print scarf, hill resort balcony, daylight",
-    span: "md:col-span-5",
-    aspect: "aspect-[3/4]",
-    position: "center 25%",
-  },
-  {
     src: "/photos/sized/floral-saree-1280.jpg",
     alt: "Siffaat Gandhi — sheer floral saree, soft daylight, smile",
     span: "md:col-span-5",

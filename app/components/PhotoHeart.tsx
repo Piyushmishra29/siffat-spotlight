@@ -42,7 +42,6 @@ const PHOTOS = [
   "/photos/sized/sundown-shore-720.jpg",
   "/photos/sized/sundown-glance-720.jpg",
   "/photos/sized/sheer-floral-720.jpg",
-  "/photos/sized/leopard-hills-720.jpg",
   "/photos/sized/zouk-bag-720.jpg",
 ];
 
