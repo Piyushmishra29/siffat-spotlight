@@ -91,7 +91,7 @@ export const bio: Bio = {
     mentor: "Saurabh Sachdeva",
   },
   theatre: {
-    company: "Anterang",
+    company: "Antrang",
     mentor: "Saurabh Sachdeva",
   },
 };
